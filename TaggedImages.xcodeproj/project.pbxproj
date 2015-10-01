@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		77D1F1561BBD878F00301854 /* Mogenerator */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 77D1F1591BBD878F00301854 /* Build configuration list for PBXAggregateTarget "Mogenerator" */;
+			buildPhases = (
+				77D1F15A1BBD87A900301854 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = Mogenerator;
+			productName = Mogenerator;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		77833C771BBA977C003968EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77833C761BBA977C003968EA /* main.m */; };
 		77833C7A1BBA977C003968EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77833C791BBA977C003968EA /* AppDelegate.m */; };
@@ -140,6 +154,9 @@
 					77833C711BBA977C003968EA = {
 						CreatedOnToolsVersion = 7.0;
 					};
+					77D1F1561BBD878F00301854 = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
 				};
 			};
 			buildConfigurationList = 77833C6D1BBA977C003968EA /* Build configuration list for PBXProject "TaggedImages" */;
@@ -156,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				77833C711BBA977C003968EA /* TaggedImages */,
+				77D1F1561BBD878F00301854 /* Mogenerator */,
 			);
 		};
 /* End PBXProject section */
@@ -203,6 +221,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		77D1F15A1BBD87A900301854 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/mogenerator --template-var arc=true -m \"TaggedImages/TaggedImages.xcdatamodeld\" -M TaggedImages/Models/CoreData/Machine/ -H TaggedImages/Models/CoreData/Human";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -344,6 +375,20 @@
 			};
 			name = Release;
 		};
+		77D1F1571BBD878F00301854 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		77D1F1581BBD878F00301854 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -361,6 +406,15 @@
 			buildConfigurations = (
 				77833C8D1BBA977C003968EA /* Debug */,
 				77833C8E1BBA977C003968EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77D1F1591BBD878F00301854 /* Build configuration list for PBXAggregateTarget "Mogenerator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77D1F1571BBD878F00301854 /* Debug */,
+				77D1F1581BBD878F00301854 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
