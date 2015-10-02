@@ -16,11 +16,25 @@
 
 + (void)fetchInstagfamPost:(NSData *)json {
     
+    NSError* error;
     FEMMapping *mapping = [TIInstagramPost defaultMapping];
-    TIInstagramPost *instagramPost = [FEMDeserializer objectFromRepresentation:json
-                                                                       mapping:mapping
-                                                                       context:[NSManagedObjectContext MR_defaultContext]];
-    NSLog(@"%@", instagramPost);
+    
+    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:json
+                                                         options:kNilOptions
+                                                           error:&error];
+    
+//    NSLog(@"%@", jsonDict);
+    NSArray *dataArray = [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
+                                                             mapping:mapping
+                                                             context:[NSManagedObjectContext MR_defaultContext]];
+//     NSLog(@"+++++++++++++\n%@", dataArray);
+
+    
+    
+//    TIInstagramPost *instagramPost = [FEMDeserializer objectFromRepresentation:dataArray
+//                                                                       mapping:mapping
+//                                                                       context:[NSManagedObjectContext MR_defaultContext]];
+    NSLog(@"%@", dataArray[0]);
 }
 
 @end

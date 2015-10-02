@@ -23,15 +23,11 @@ extern const struct TIInstagramPostAttributes {
 
 //- (BOOL)validateCaptionText:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSDate* createdTime;
+@property (nonatomic, strong) NSString* createdTime;
 
 //- (BOOL)validateCreatedTime:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSNumber* id;
-
-@property (atomic) int64_t idValue;
-- (int64_t)idValue;
-- (void)setIdValue:(int64_t)value_;
+@property (nonatomic, strong) NSString* id;
 
 //- (BOOL)validateId:(id*)value_ error:(NSError**)error_;
 
@@ -46,14 +42,11 @@ extern const struct TIInstagramPostAttributes {
 - (NSString*)primitiveCaptionText;
 - (void)setPrimitiveCaptionText:(NSString*)value;
 
-- (NSDate*)primitiveCreatedTime;
-- (void)setPrimitiveCreatedTime:(NSDate*)value;
+- (NSString*)primitiveCreatedTime;
+- (void)setPrimitiveCreatedTime:(NSString*)value;
 
-- (NSNumber*)primitiveId;
-- (void)setPrimitiveId:(NSNumber*)value;
-
-- (int64_t)primitiveIdValue;
-- (void)setPrimitiveIdValue:(int64_t)value_;
+- (NSString*)primitiveId;
+- (void)setPrimitiveId:(NSString*)value;
 
 - (NSString*)primitivePictureURL;
 - (void)setPrimitivePictureURL:(NSString*)value;

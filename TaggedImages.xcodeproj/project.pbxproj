@@ -22,6 +22,7 @@
 
 /* Begin PBXBuildFile section */
 		77007FF61BBE23A7008DE2C7 /* json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77007FF51BBE23A7008DE2C7 /* json.txt */; settings = {ASSET_TAGS = (); }; };
+		77007FF81BBE3B8D008DE2C7 /* jsonArray.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77007FF71BBE3B8D008DE2C7 /* jsonArray.txt */; settings = {ASSET_TAGS = (); }; };
 		7753B4D41BBDAAAE00C4E242 /* TIInstagramPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 7753B4CC1BBDAAAE00C4E242 /* TIInstagramPost.m */; settings = {ASSET_TAGS = (); }; };
 		7753B4D51BBDAAAE00C4E242 /* TIUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 7753B4CE1BBDAAAE00C4E242 /* TIUser.m */; settings = {ASSET_TAGS = (); }; };
 		7753B4D61BBDAAAE00C4E242 /* _TIInstagramPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 7753B4D11BBDAAAE00C4E242 /* _TIInstagramPost.m */; settings = {ASSET_TAGS = (); }; };
@@ -43,6 +44,7 @@
 		3991F7B82A94EA3D93C4E414 /* Pods-TaggedImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaggedImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaggedImages/Pods-TaggedImages.release.xcconfig"; sourceTree = "<group>"; };
 		4F320C2D41255C7257F32931 /* Pods-TaggedImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaggedImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaggedImages/Pods-TaggedImages.debug.xcconfig"; sourceTree = "<group>"; };
 		77007FF51BBE23A7008DE2C7 /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
+		77007FF71BBE3B8D008DE2C7 /* jsonArray.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = jsonArray.txt; sourceTree = "<group>"; };
 		7753B4CB1BBDAAAE00C4E242 /* TIInstagramPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIInstagramPost.h; sourceTree = "<group>"; };
 		7753B4CC1BBDAAAE00C4E242 /* TIInstagramPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIInstagramPost.m; sourceTree = "<group>"; };
 		7753B4CD1BBDAAAE00C4E242 /* TIUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIUser.h; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				77833C791BBA977C003968EA /* AppDelegate.m */,
 				77833C7B1BBA977C003968EA /* ViewController.h */,
 				77833C7C1BBA977C003968EA /* ViewController.m */,
+				77007FF71BBE3B8D008DE2C7 /* jsonArray.txt */,
 				77007FF51BBE23A7008DE2C7 /* json.txt */,
 				77833C7E1BBA977C003968EA /* Main.storyboard */,
 				77833C841BBA977C003968EA /* Assets.xcassets */,
@@ -281,6 +284,7 @@
 				77007FF61BBE23A7008DE2C7 /* json.txt in Resources */,
 				77833C881BBA977C003968EA /* LaunchScreen.storyboard in Resources */,
 				77833C851BBA977C003968EA /* Assets.xcassets in Resources */,
+				77007FF81BBE3B8D008DE2C7 /* jsonArray.txt in Resources */,
 				77833C801BBA977C003968EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
