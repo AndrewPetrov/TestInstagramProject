@@ -10,5 +10,4 @@
 
 @interface TIInstagramMapingManager : NSObject
 
-
 @end

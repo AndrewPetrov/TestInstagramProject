@@ -1,6 +1,6 @@
 //
 //  TIInstagramManager.m
-//  
+//
 //
 //  Created by Андрей on 10/1/15.
 //
@@ -20,21 +20,18 @@
     FEMMapping *mapping = [TIInstagramPost defaultMapping];
     
     NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:json
-                                                         options:kNilOptions
-                                                           error:&error];
+                                                             options:kNilOptions
+                                                               error:&error];
     
-//    NSLog(@"%@", jsonDict);
     NSArray *dataArray = [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
-                                                             mapping:mapping
-                                                             context:[NSManagedObjectContext MR_defaultContext]];
-//     NSLog(@"+++++++++++++\n%@", dataArray);
-
+                                                               mapping:mapping
+                                                               context:[NSManagedObjectContext MR_defaultContext]];
     
+//    NSLog(@"%@", dataArray[0]);
     
-//    TIInstagramPost *instagramPost = [FEMDeserializer objectFromRepresentation:dataArray
-//                                                                       mapping:mapping
-//                                                                       context:[NSManagedObjectContext MR_defaultContext]];
-    NSLog(@"%@", dataArray[0]);
+    [[NSManagedObjectContext MR_defaultContext] save:nil];
+    NSArray *posts = [TIInstagramPost MR_findAll];
+    NSLog(@"%@",posts);
 }
 
 @end
