@@ -20,8 +20,7 @@
                                    keyPath:@"created_time"
                                        map:^id(id value) {
                                            if ([value isKindOfClass:[NSString class]]) {
-                                               NSInteger doubleValue = [value doubleValue];
-                                               return [NSDate dateWithTimeIntervalSince1970:doubleValue];
+                                               return [NSDate dateWithTimeIntervalSince1970:[value doubleValue]];
                                            }
                                            return nil;
                                        }
