@@ -23,11 +23,9 @@
                                                              options:kNilOptions
                                                                error:&error];
     
-    NSArray *dataArray = [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
-                                                               mapping:mapping
-                                                               context:[NSManagedObjectContext MR_defaultContext]];
-    
-//    NSLog(@"%@", dataArray[0]);
+    [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
+                                          mapping:mapping
+                                          context:[NSManagedObjectContext MR_defaultContext]];
     
     [[NSManagedObjectContext MR_defaultContext] save:nil];
     NSArray *posts = [TIInstagramPost MR_findAll];
