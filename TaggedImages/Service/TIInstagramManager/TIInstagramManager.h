@@ -10,6 +10,6 @@
 
 @interface TIInstagramManager : NSObject
 
-+ (void)fetchInstagfamPost:(NSData *)json;
++ (void)fetchInstagramPost:(NSData *)json;
 
 @end

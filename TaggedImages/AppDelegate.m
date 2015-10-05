@@ -22,7 +22,7 @@
     
     NSData *json = [NSData dataWithContentsOfFile:@"/developing/Yalantis/TaggedImages/TaggedImages/jsonArray.txt"];
     
-    [TIInstagramManager fetchInstagfamPost:json];
+    [TIInstagramManager fetchInstagramPost:json];
     
     return YES;
 }

@@ -11,23 +11,12 @@
 #import "TIInstagramPost.h"
 #import "TIInstagramPost+Mapping.h"
 #import <MagicalRecord.h>
+#import "TIInstagramMapingManager.h"
 
 @implementation TIInstagramManager
 
-+ (void)fetchInstagfamPost:(NSData *)json {
-    
-    NSError* error;
-    FEMMapping *mapping = [TIInstagramPost defaultMapping];
-    
-    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:json
-                                                             options:kNilOptions
-                                                               error:&error];
-    
-    [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
-                                          mapping:mapping
-                                          context:[NSManagedObjectContext MR_defaultContext]];
-    
-    [[NSManagedObjectContext MR_defaultContext] save:nil];
++ (void)fetchInstagramPost:(NSData *)json {
+    [TIInstagramMapingManager mapPostFromJson:json];
     NSArray *posts = [TIInstagramPost MR_findAll];
     NSLog(@"%@",posts);
 }

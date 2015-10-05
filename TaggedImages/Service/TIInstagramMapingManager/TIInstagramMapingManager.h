@@ -10,4 +10,6 @@
 
 @interface TIInstagramMapingManager : NSObject
 
++ (void)mapPostFromJson:(NSData *)jsonData;
+
 @end
