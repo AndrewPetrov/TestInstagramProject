@@ -10,6 +10,8 @@
 
 @interface TIInstagramManager : NSObject
 
++ (void)userAuthorizationRequest;
 + (void)fetchInstagramPost:(NSData *)json;
++ (void)requestRecentPostWithTagFromId:(NSString *)idString;
 
 @end

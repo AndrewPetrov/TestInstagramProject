@@ -34,9 +34,12 @@
 		77833C831BBA977C003968EA /* TaggedImages.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 77833C811BBA977C003968EA /* TaggedImages.xcdatamodeld */; };
 		77833C851BBA977C003968EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77833C841BBA977C003968EA /* Assets.xcassets */; };
 		77833C881BBA977C003968EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77833C861BBA977C003968EA /* LaunchScreen.storyboard */; };
+		778878471BC48A6500FE0981 /* TILoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 778878461BC48A6500FE0981 /* TILoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		77D0D9851BC2D28F001B2C7C /* TIInstagramPost+Mapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D0D97E1BC2D28F001B2C7C /* TIInstagramPost+Mapping.m */; settings = {ASSET_TAGS = (); }; };
 		77D0D9861BC2D28F001B2C7C /* TIInstagramManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D0D9811BC2D28F001B2C7C /* TIInstagramManager.m */; settings = {ASSET_TAGS = (); }; };
 		77D0D9871BC2D28F001B2C7C /* TIInstagramMapingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D0D9841BC2D28F001B2C7C /* TIInstagramMapingManager.m */; settings = {ASSET_TAGS = (); }; };
+		77D0D98E1BC2E6BA001B2C7C /* TIInstagramRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D0D98D1BC2E6BA001B2C7C /* TIInstagramRequest.m */; settings = {ASSET_TAGS = (); }; };
+		77D0D9951BC2E71C001B2C7C /* TIInstagramRequestFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D0D9941BC2E71C001B2C7C /* TIInstagramRequestFactory.m */; settings = {ASSET_TAGS = (); }; };
 		AC53EB7A2A9C8E90AC7F0726 /* libPods-TaggedImages.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A5D8DD0EF1309DFCC59235 /* libPods-TaggedImages.a */; };
 /* End PBXBuildFile section */
 
@@ -64,12 +67,18 @@
 		77833C841BBA977C003968EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77833C871BBA977C003968EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		77833C891BBA977C003968EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		778878451BC48A6500FE0981 /* TILoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TILoginViewController.h; sourceTree = "<group>"; };
+		778878461BC48A6500FE0981 /* TILoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TILoginViewController.m; sourceTree = "<group>"; };
 		77D0D97D1BC2D28F001B2C7C /* TIInstagramPost+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIInstagramPost+Mapping.h"; sourceTree = "<group>"; };
 		77D0D97E1BC2D28F001B2C7C /* TIInstagramPost+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIInstagramPost+Mapping.m"; sourceTree = "<group>"; };
 		77D0D9801BC2D28F001B2C7C /* TIInstagramManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIInstagramManager.h; sourceTree = "<group>"; };
 		77D0D9811BC2D28F001B2C7C /* TIInstagramManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIInstagramManager.m; sourceTree = "<group>"; };
 		77D0D9831BC2D28F001B2C7C /* TIInstagramMapingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIInstagramMapingManager.h; sourceTree = "<group>"; };
 		77D0D9841BC2D28F001B2C7C /* TIInstagramMapingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIInstagramMapingManager.m; sourceTree = "<group>"; };
+		77D0D98C1BC2E6BA001B2C7C /* TIInstagramRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIInstagramRequest.h; sourceTree = "<group>"; };
+		77D0D98D1BC2E6BA001B2C7C /* TIInstagramRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIInstagramRequest.m; sourceTree = "<group>"; };
+		77D0D9931BC2E71C001B2C7C /* TIInstagramRequestFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIInstagramRequestFactory.h; sourceTree = "<group>"; };
+		77D0D9941BC2E71C001B2C7C /* TIInstagramRequestFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIInstagramRequestFactory.m; sourceTree = "<group>"; };
 		B5A5D8DD0EF1309DFCC59235 /* libPods-TaggedImages.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TaggedImages.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +114,8 @@
 		770080041BC2C552008DE2C7 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				778878451BC48A6500FE0981 /* TILoginViewController.h */,
+				778878461BC48A6500FE0981 /* TILoginViewController.m */,
 			);
 			name = Presentation;
 			path = TaggedImages/Presentation;
@@ -200,6 +211,8 @@
 		77D0D97A1BC2D28F001B2C7C /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				77D0D9921BC2E71C001B2C7C /* TIInstagramRequestFactory */,
+				77D0D98B1BC2E6BA001B2C7C /* TIInstagramRequest */,
 				77D0D97B1BC2D28F001B2C7C /* MappingRules */,
 				77D0D97F1BC2D28F001B2C7C /* TIInstagramManager */,
 				77D0D9821BC2D28F001B2C7C /* TIInstagramMapingManager */,
@@ -241,6 +254,24 @@
 				77D0D9841BC2D28F001B2C7C /* TIInstagramMapingManager.m */,
 			);
 			path = TIInstagramMapingManager;
+			sourceTree = "<group>";
+		};
+		77D0D98B1BC2E6BA001B2C7C /* TIInstagramRequest */ = {
+			isa = PBXGroup;
+			children = (
+				77D0D98C1BC2E6BA001B2C7C /* TIInstagramRequest.h */,
+				77D0D98D1BC2E6BA001B2C7C /* TIInstagramRequest.m */,
+			);
+			path = TIInstagramRequest;
+			sourceTree = "<group>";
+		};
+		77D0D9921BC2E71C001B2C7C /* TIInstagramRequestFactory */ = {
+			isa = PBXGroup;
+			children = (
+				77D0D9931BC2E71C001B2C7C /* TIInstagramRequestFactory.h */,
+				77D0D9941BC2E71C001B2C7C /* TIInstagramRequestFactory.m */,
+			);
+			path = TIInstagramRequestFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,10 +405,13 @@
 				77833C771BBA977C003968EA /* main.m in Sources */,
 				77833C831BBA977C003968EA /* TaggedImages.xcdatamodeld in Sources */,
 				77D0D9861BC2D28F001B2C7C /* TIInstagramManager.m in Sources */,
+				77D0D98E1BC2E6BA001B2C7C /* TIInstagramRequest.m in Sources */,
 				7753B4D41BBDAAAE00C4E242 /* TIInstagramPost.m in Sources */,
 				7753B4D61BBDAAAE00C4E242 /* _TIInstagramPost.m in Sources */,
 				7753B4D71BBDAAAE00C4E242 /* _TIUser.m in Sources */,
+				778878471BC48A6500FE0981 /* TILoginViewController.m in Sources */,
 				77D0D9871BC2D28F001B2C7C /* TIInstagramMapingManager.m in Sources */,
+				77D0D9951BC2E71C001B2C7C /* TIInstagramRequestFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

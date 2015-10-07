@@ -20,9 +20,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [MagicalRecord setupCoreDataStack];
     
-    NSData *json = [NSData dataWithContentsOfFile:@"/developing/Yalantis/TaggedImages/TaggedImages/jsonArray.txt"];
+//    NSData *json = [NSData dataWithContentsOfFile:@"/developing/Yalantis/TaggedImages/TaggedImages/jsonArray.txt"];
     
-    [TIInstagramManager fetchInstagramPost:json];
+//    [TIInstagramManager fetchInstagramPost:json];
+//    [TIInstagramManager requestRecentPostWithTagFromId:@"111"];
     
     return YES;
 }
