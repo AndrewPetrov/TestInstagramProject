@@ -20,6 +20,8 @@
 
 + (void)userAuthorizationRequest {
     
+    
+    
 }
 
 + (void)fetchInstagramPost:(NSData *)json {

@@ -6,9 +6,11 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-
 #import "TILoginViewController.h"
-const NSString* redirect_uri = @"https://github.com";
+
+const NSString* redirect_uri = @"taggedimage://redirect.com";
+const NSString* redirect_uri_domain = @"redirect.com";
+
 
 @interface TILoginViewController () <UIWebViewDelegate>
 
@@ -20,6 +22,8 @@ const NSString* redirect_uri = @"https://github.com";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     self.loginWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
     [self.loginWebView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
     self.loginWebView.delegate = self;
@@ -39,36 +43,28 @@ const NSString* redirect_uri = @"https://github.com";
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     //    [indicator startAnimating];
-    
-    NSString *extendedHost = [NSString stringWithFormat:@"https://%@", [[request URL] host]];
-    NSLog(@"%@ = %@", extendedHost, redirect_uri);
-    if ([extendedHost isEqualToString:redirect_uri]) {
-        NSLog(@"%@", request);
+    NSString* token = nil;
+    if ([request.URL.host isEqualToString:(NSString *)redirect_uri_domain]) {
         
-        // Extract oauth_verifier from URL query
-        NSString* verifier = nil;
-        NSArray* urlParams = [[[request URL] query] componentsSeparatedByString:@"&"];
-        for (NSString* param in urlParams) {
-            NSArray* keyValue = [param componentsSeparatedByString:@"="];
-            NSString* key = [keyValue objectAtIndex:0];
-            if ([key isEqualToString:@"code"]) {
-                verifier = [keyValue objectAtIndex:1];
-                break;
-            }
-        }
+        NSArray* urlParams = [request.URL.fragment componentsSeparatedByString:@"="];
         
-        if (verifier) {
-            
-            NSLog(@"%@", verifier);
-        } else {
-            // ERROR!
-        }
-        
-        [webView removeFromSuperview];
-        
-        return NO;
+        token = urlParams[[urlParams indexOfObject:@"access_token"] + 1];
     }
+    
+    
+    //        taggedimage://redirect.com#access_token=1323823338.482b295.e20882b4a7064d13acc5f25e81e10eb4
+    
+    if (token) {
+        
+        NSLog(@"%@", token);
+    } else {
+        // ERROR!
+    }
+    
+    [webView removeFromSuperview];
     
     return YES;
 }
+
+
 @end
