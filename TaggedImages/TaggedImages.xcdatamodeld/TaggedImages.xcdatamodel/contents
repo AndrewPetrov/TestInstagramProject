@@ -7,11 +7,10 @@
         <attribute name="pictureURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="TIUser" representedClassName="TIUser" syncable="YES">
-        <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="TIInstagramPost" positionX="-261" positionY="-54" width="128" height="103"/>
-        <element name="TIUser" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="TIUser" positionX="-63" positionY="-18" width="128" height="58"/>
     </elements>
 </model>

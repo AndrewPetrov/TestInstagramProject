@@ -4,7 +4,6 @@
 #import "_TIUser.h"
 
 const struct TIUserAttributes TIUserAttributes = {
-	.login = @"login",
 	.token = @"token",
 };
 
@@ -36,8 +35,6 @@ const struct TIUserAttributes TIUserAttributes = {
 
 	return keyPaths;
 }
-
-@dynamic login;
 
 @dynamic token;
 

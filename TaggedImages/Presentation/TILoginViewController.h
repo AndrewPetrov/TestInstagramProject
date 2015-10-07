@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+extern const NSString* redirect_uri;
+
 @interface TILoginViewController : UIViewController<UIWebViewDelegate>
 
 @end
