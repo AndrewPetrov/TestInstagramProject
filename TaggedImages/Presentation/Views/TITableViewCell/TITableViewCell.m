@@ -9,6 +9,7 @@
 #import "TITableViewCell.h"
 #import "TIInstagramPost.h"
 #import "UIImage+TaggedImages.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 
 @interface TITableViewCell ()
@@ -28,9 +29,9 @@
     }
     else {
         self.descriptionTextView.text = post.captionText;
-        self.postImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:post.pictureURL]]];
+        [self.postImageView sd_setImageWithURL:[NSURL URLWithString:post.pictureURL]
+                              placeholderImage:[UIImage loadingPostCellImage]];
     }
 }
 
 @end
-

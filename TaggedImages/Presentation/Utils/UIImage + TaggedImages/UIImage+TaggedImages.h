@@ -11,6 +11,7 @@
 @interface UIImage (TaggedImages)
 
 + (UIImage *)stubPostCellImage;
++ (UIImage *)loadingPostCellImage;
 + (UIImage *)tableImage;
 + (UIImage *)collectionImage;
 

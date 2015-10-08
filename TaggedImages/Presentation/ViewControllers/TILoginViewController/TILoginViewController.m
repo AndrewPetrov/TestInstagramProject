@@ -13,8 +13,6 @@
 #import "TIPresentationConstants.h"
 
 const NSString* redirect_uri = @"taggedimage://redirect.com";
-//extern const NSString* redirect_uri_domain = @"redirect.com";
-
 
 @interface TILoginViewController () <UIWebViewDelegate>
 

@@ -22,5 +22,9 @@
     return [UIImage imageNamed:@"square-individual-nine-7"];
 }
 
++ (UIImage *)loadingPostCellImage {
+    return [UIImage imageNamed:@"photo-7"];
+}
+
 
 @end

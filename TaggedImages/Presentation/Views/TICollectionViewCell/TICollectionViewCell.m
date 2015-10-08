@@ -9,7 +9,7 @@
 #import "TICollectionViewCell.h"
 #import "TIInstagramPost.h"
 #import "UIImage+TaggedImages.h"
-
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface TICollectionViewCell ()
 
@@ -25,7 +25,8 @@
         self.postImageView.image = [UIImage stubPostCellImage];
     }
     else {
-        self.postImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:post.pictureURL]]];
+        [self.postImageView sd_setImageWithURL:[NSURL URLWithString:post.pictureURL]
+                              placeholderImage:[UIImage loadingPostCellImage]];
     }
 }
 

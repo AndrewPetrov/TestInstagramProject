@@ -6,7 +6,7 @@ target 'TaggedImages' do
 pod "MagicalRecord"
 pod "AFNetworking", "~> 2.0"
 pod 'FastEasyMapping', '~> 1.0'
-
+pod 'SDWebImage', '~>3.7'
 
 end
 
