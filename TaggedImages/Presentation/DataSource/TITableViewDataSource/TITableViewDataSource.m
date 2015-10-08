@@ -19,7 +19,7 @@
 @implementation TITableViewDataSource
 
 - (void)configureCell:(TITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    TIInstagramPost *post = [self instagramPostAtIndex:indexPath.row];
+    TIInstagramPost *post = [self postAtIndex:indexPath.row];
     [cell setPost:post];
 }
 

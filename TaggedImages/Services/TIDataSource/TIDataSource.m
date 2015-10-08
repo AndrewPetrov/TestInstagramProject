@@ -25,7 +25,7 @@
     return [self.fetchedResultsController fetchedObjects].count;
     
 }
-- (TIInstagramPost *)instagramPostAtIndex:(NSInteger)index {
+- (TIInstagramPost *)postAtIndex:(NSInteger)index {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
     return [self.fetchedResultsController objectAtIndexPath:indexPath];
 }

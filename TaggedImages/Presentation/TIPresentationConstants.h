@@ -1,0 +1,19 @@
+//
+//  TIPresentationConstants.h
+//  TaggedImages
+//
+//  Created by Андрей on 10/8/15.
+//  Copyright © 2015 AndrewPetrov. All rights reserved.
+//
+
+#ifndef TIPresentationConstants_h
+#define TIPresentationConstants_h
+
+static NSString * const TITableViewCellIdentifier = @"TITableViewCellIdentifier";
+static NSString * const TICollectionViewCellIdentifier = @"TICollectionViewCellIdentifier";
+static NSString * const TITableViewControllerIdentifier = @"TITableViewControllerIdentifier";
+static NSString * const TICollectionViewControllerIdentifier = @"TICollectionViewControllerIdentifier";
+
+
+
+#endif /* TIPresentationConstants_h */

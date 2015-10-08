@@ -9,6 +9,7 @@
 #import "TITableViewController.h"
 #import "TITableViewCell.h"
 #import "TITableViewDataSource.h"
+#import "TIPresentationConstants.h"
 
 @interface TITableViewController ()
 
@@ -37,12 +38,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSString *TITableViewCellIdentifier = @"TITableViewCellIdentifier";
     TITableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:TITableViewCellIdentifier
                                     forIndexPath:indexPath];
-    [cell setPost:[self.allPosts instagramPosts][indexPath.row]];
-
+    [cell setPost:[self.allPosts postAtIndex:indexPath.row]];
     return cell;
 }
 
