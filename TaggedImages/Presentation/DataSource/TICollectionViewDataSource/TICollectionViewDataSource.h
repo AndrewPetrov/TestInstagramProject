@@ -7,7 +7,10 @@
 //
 
 #import "TIDataSource.h"
+@class UICollectionView;
 
 @interface TICollectionViewDataSource : TIDataSource
+
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end

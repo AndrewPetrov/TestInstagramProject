@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class TICollectionViewDataSource;
 
 @interface TICollectionViewController : UICollectionViewController <UIGestureRecognizerDelegate>
+
+@property (nonatomic, strong) TICollectionViewDataSource *allPosts;
 
 @end

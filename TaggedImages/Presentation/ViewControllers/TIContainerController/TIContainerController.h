@@ -10,6 +10,6 @@
 
 @interface TIContainerController : UIViewController
 
-+ (TIContainerController *)initWithTag:(NSString *)tag;
+@property (nonatomic, strong) NSString *tag;
 
 @end

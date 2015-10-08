@@ -8,7 +8,7 @@
 
 #import "TITagViewController.h"
 #import "TIContainerController.h"
-#import "TIInstagramManager.h"
+#import "TIPresentationConstants.h"
 
 @interface TITagViewController ()
 
@@ -18,26 +18,10 @@
 
 @implementation TITagViewController
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-         NSLog(@"TITagViewController init");
-    }
-    return self;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    NSLog(@"TITagViewController viewDidLoad");
-    // Do any additional setup after loading the view.
-}
-- (void)dealloc {
-    NSLog(@"TITagViewController dealloc");
-}
 - (IBAction)sarchAction:(UIButton *)sender {
-    [TIInstagramManager requestRecentPostWithTag:self.tagField.text fromId:nil];
-            TIContainerController *containerController = [TIContainerController  initWithTag:self.tagField.text];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TIContainerController *containerController = [storyboard instantiateViewControllerWithIdentifier:TIContainerControllerIdentifier];
+    containerController.tag = self.tagField.text;
     [self.navigationController pushViewController:containerController animated:YES];
 }
 

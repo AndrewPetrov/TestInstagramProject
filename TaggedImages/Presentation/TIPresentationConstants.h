@@ -14,5 +14,6 @@ static NSString * const TICollectionViewCellIdentifier = @"TICollectionViewCellI
 static NSString * const TITableViewControllerIdentifier = @"TITableViewControllerIdentifier";
 static NSString * const TICollectionViewControllerIdentifier = @"TICollectionViewControllerIdentifier";
 static NSString * const TITagViewControllerIdentifier = @"TITagViewControllerIdentifier";
+static NSString * const TIContainerControllerIdentifier = @"TIContainerControllerIdentifier";
 
 #endif /* TIPresentationConstants_h */

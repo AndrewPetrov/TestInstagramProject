@@ -11,18 +11,11 @@
 #import "TICollectionViewDataSource.h"
 #import "TIPresentationConstants.h"
 
-@interface TICollectionViewController ()
-
-@property (nonatomic, strong) IBOutlet TICollectionViewDataSource *allPosts;
-
-@end
-
 @implementation TICollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    //#warning рекогнайзер стоит создавать в сториборде
 }
 
 - (IBAction)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {

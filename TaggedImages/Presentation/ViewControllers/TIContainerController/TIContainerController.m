@@ -12,6 +12,8 @@
 #import "UIImage+TaggedImages.h"
 #import "TIPresentationConstants.h"
 #import "TITableViewDataSource.h"
+#import "TIInstagramManager.h"
+#import "TICollectionViewDataSource.h"
 
 @interface TIContainerController ()
 
@@ -20,20 +22,15 @@
 @property (nonatomic, strong) UIImage *togglePresentationImage;
 @property (nonatomic, weak) IBOutlet UIBarButtonItem *togglePresentationButton;
 @property (nonatomic, assign) BOOL transitionInProgress;
-@property (nonatomic, strong) NSString *tag;
 
 @end
 
 @implementation TIContainerController
 
-+ (TIContainerController *)initWithTag:(NSString *)tag {
-    TIContainerController *containerController = [[TIContainerController alloc] init];
-    containerController.tag = tag;
-    return containerController;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [TIInstagramManager requestRecentPostWithTag:self.tag fromId:nil];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:TITableViewControllerIdentifier];
@@ -43,6 +40,9 @@
     
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
+    self.collectionVC.allPosts = [[TICollectionViewDataSource alloc] init];
+    self.collectionVC.allPosts.tag = self.tag;
+    self.collectionVC.allPosts.collectionView = self.collectionVC.collectionView;
 //    post TagNotification
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = self.tag;

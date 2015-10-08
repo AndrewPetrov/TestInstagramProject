@@ -10,12 +10,7 @@
 #import "TITableViewCell.h"
 #import "TITableViewDataSource.h"
 #import "TIPresentationConstants.h"
-
-@interface TITableViewController ()
-
-
-
-@end
+#import "TIInstagramManager.h"
 
 @implementation TITableViewController
 
@@ -23,13 +18,6 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
 }
-//
-//- (NSInteger)postCount;
-//- (TIInstagramPost *)instagramPostAtIndex:(NSInteger)index;
-//- (NSInteger)tagsCount;
-//- (NSArray *)instagramPosts;
-//
-
 
 #pragma mark - UITableViewDataSource
 
