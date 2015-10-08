@@ -25,10 +25,10 @@
     return [NSURLRequest requestWithURL:[NSURL URLWithString:uriString]];
 }
 
-+ (void)fetchInstagramPost:(NSData *)json {
-    [TIInstagramMapingManager mapPostFromJSONObjects:json];
-    NSArray *posts = [TIInstagramPost MR_findAll];
-}
+//+ (void)fetchInstagramPost:(NSData *)json {
+//    [TIInstagramMapingManager mapPostsFromJSONArray:json];
+//    NSArray *posts = [TIInstagramPost MR_findAll];
+//}
 
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request {
     NSArray* urlParams = [request.URL.fragment componentsSeparatedByString:@"="];
@@ -42,7 +42,7 @@
     TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTagTokenFromId:idString];
 
     void(^completionBlock)(NSDictionary *, NSError *) = ^(NSDictionary* results, NSError *error) {
-        [TIInstagramMapingManager mapPostFromJSONObjects:results];
+        [TIInstagramMapingManager mapPostsFromJSONArray:results[@"data"]];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     };
     [request fetchRequestWithComplitionBlock:completionBlock];

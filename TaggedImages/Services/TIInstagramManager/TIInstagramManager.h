@@ -12,7 +12,7 @@
 
 + (NSURLRequest *)userAuthorizationRequest;
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request;
-+ (void)fetchInstagramPost:(NSData *)json;
+//+ (void)fetchInstagramPost:(NSData *)json;
 + (void)requestRecentPostWithTagFromId:(NSString *)idString;
 
 @end

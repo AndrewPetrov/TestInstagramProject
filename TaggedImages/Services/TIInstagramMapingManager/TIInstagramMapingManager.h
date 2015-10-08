@@ -10,6 +10,6 @@
 
 @interface TIInstagramMapingManager : NSObject
 
-+ (void)mapPostFromJSONObjects:(NSDictionary *)jsonDict;
++ (void)mapPostsFromJSONArray:(NSDictionary *)jsonDict;
 
 @end

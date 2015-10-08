@@ -14,9 +14,9 @@
 
 @implementation TIInstagramMapingManager
 
-+ (void)mapPostFromJSONObjects:(NSDictionary *)jsonDict {
++ (void)mapPostsFromJSONArray:(NSArray *)jsonArray {
     FEMMapping *mapping = [TIInstagramPost defaultMapping];
-    [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
+    [FEMDeserializer collectionFromRepresentation:jsonArray
                                           mapping:mapping
                                           context:[NSManagedObjectContext MR_defaultContext]];
     [[NSManagedObjectContext MR_defaultContext] save:nil];

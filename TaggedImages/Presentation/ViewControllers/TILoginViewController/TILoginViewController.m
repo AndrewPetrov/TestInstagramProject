@@ -50,8 +50,7 @@ const NSString* redirect_uri = @"taggedimage://redirect.com";
         TITagViewController *tagViewController  = [storyboard instantiateViewControllerWithIdentifier:TITagViewControllerIdentifier];
         TIContainerController *containerController = [[TIContainerController alloc] init];
         
-        
-        [self.navigationController pushViewController:tagViewController animated:YES];
+        [self.navigationController pushViewController:containerController animated:YES];
     }
     
     return YES;
