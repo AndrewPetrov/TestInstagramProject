@@ -10,4 +10,7 @@
 
 @interface NSFetchedResultsController (Factory)
 
++ (NSFetchedResultsController *)postsFRC;
++ (NSFetchedResultsController *)tagsFRC;
+
 @end

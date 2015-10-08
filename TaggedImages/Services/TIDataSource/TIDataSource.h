@@ -12,8 +12,8 @@
 
 @interface TIDataSource : NSObject <NSFetchedResultsControllerDelegate>
 
-- (NSInteger)postCountWithTag:(NSString *)tag;
-- (TIInstagramPost *)instagramPosttWithTag:(NSString *)tag atIndex:(NSInteger)index;
+- (NSInteger)postCount;
+- (TIInstagramPost *)instagramPostAtIndex:(NSInteger)index;
 - (NSInteger)tagsCount;
 - (NSArray *)instagramPosts;
 

@@ -24,7 +24,7 @@
     
 //    [TIInstagramManager fetchInstagramPost:json];
     
-    [TIInstagramManager requestRecentPostWithTagFromId:nil];
+//    [TIInstagramManager requestRecentPostWithTagFromId:nil];
     
     
     return YES;

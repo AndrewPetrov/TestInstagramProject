@@ -6,8 +6,8 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "TIDataSource.h"
 
-@interface TITableVCDataSource : NSObject
+@interface TITableViewDataSource : TIDataSource
 
 @end

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iNX-pZ-ewa">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -22,6 +24,85 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="426" y="450"/>
+        </scene>
+        <!--Table-->
+        <scene sceneID="7xF-f6-xBS">
+            <objects>
+                <tableViewController id="iNX-pZ-ewa" userLabel="Table" customClass="TITableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="80" sectionHeaderHeight="10" sectionFooterHeight="10" id="Kc9-01-7AB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="0.52387573460000003" green="1" blue="0.98145253269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TITableViewCellIdentifier" rowHeight="120" id="p61-3y-Nqx" userLabel="TITableViewCellIdentifier" customClass="TITableViewCell">
+                                <rect key="frame" x="0.0" y="50" width="600" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p61-3y-Nqx" id="lwG-Ma-Bif">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-wp-ZHS">
+                                            <rect key="frame" x="13" y="13" width="92" height="92"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="xVZ-wp-ZHS" secondAttribute="height" multiplier="1:1" id="7HI-Ci-ra8"/>
+                                                <constraint firstAttribute="height" constant="92" id="lXz-HD-65U"/>
+                                            </constraints>
+                                        </imageView>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gms-6C-YBS">
+                                            <rect key="frame" x="110" y="13" width="464" height="92"/>
+                                            <animations/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstItem="gms-6C-YBS" firstAttribute="height" secondItem="xVZ-wp-ZHS" secondAttribute="height" id="5Tm-CT-c0Q"/>
+                                        <constraint firstItem="xVZ-wp-ZHS" firstAttribute="top" secondItem="lwG-Ma-Bif" secondAttribute="topMargin" constant="5" id="95b-P1-o3p"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="gms-6C-YBS" secondAttribute="trailing" constant="18" id="Crc-MT-UW4"/>
+                                        <constraint firstAttribute="centerY" secondItem="xVZ-wp-ZHS" secondAttribute="centerY" constant="1" id="FfW-Vy-p9N"/>
+                                        <constraint firstItem="xVZ-wp-ZHS" firstAttribute="leading" secondItem="lwG-Ma-Bif" secondAttribute="leadingMargin" constant="5" id="Ojg-1o-ikf"/>
+                                        <constraint firstItem="gms-6C-YBS" firstAttribute="centerY" secondItem="xVZ-wp-ZHS" secondAttribute="centerY" id="Zqc-Nn-kw1"/>
+                                        <constraint firstItem="gms-6C-YBS" firstAttribute="leading" secondItem="xVZ-wp-ZHS" secondAttribute="trailing" constant="5" id="bjU-mL-DIS"/>
+                                        <constraint firstItem="gms-6C-YBS" firstAttribute="top" secondItem="lwG-Ma-Bif" secondAttribute="topMargin" constant="5" id="dMS-Nu-cOa"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="gms-6C-YBS" secondAttribute="bottom" constant="5" id="lbe-yD-AUV"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="dMS-Nu-cOa"/>
+                                            <exclude reference="lbe-yD-AUV"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <connections>
+                                    <outlet property="descriptionTextView" destination="gms-6C-YBS" id="ptD-iQ-ODP"/>
+                                    <outlet property="postImageView" destination="xVZ-wp-ZHS" id="WYe-MM-Zmg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iNX-pZ-ewa" id="cWB-Zm-EQC"/>
+                            <outlet property="delegate" destination="iNX-pZ-ewa" id="DuT-cB-9vn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="cJa-s8-ybn"/>
+                    <connections>
+                        <outlet property="allPosts" destination="VhO-fW-RgG" id="PAg-UK-cqE"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sh6-Sf-VEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="VhO-fW-RgG" userLabel="TITableViewDataSource" customClass="TITableViewDataSource">
+                    <connections>
+                        <outlet property="tableView" destination="Kc9-01-7AB" id="zUa-DJ-E5B"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="1151" y="199"/>
         </scene>
     </scenes>
 </document>
