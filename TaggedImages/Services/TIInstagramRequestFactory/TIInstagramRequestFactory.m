@@ -15,9 +15,8 @@
 
 + (TIInstagramRequest *)instagramRequestWithTagTokenFromId:(NSString *)idString {
     NSString *tokenString = [TIUser MR_findFirst].token;
-    tokenString = @"5555";
     NSString *tag = @"cars";
-    
+    NSLog(@"\n\ntokenString = %@", tokenString);
     NSString *requestString =
     [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?access_token=%@", tag, tokenString];
     if (idString) {

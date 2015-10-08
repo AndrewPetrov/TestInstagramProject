@@ -37,24 +37,22 @@
     TIUser *user = [TIUser MR_createEntity];
     user.token = token;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-//    NSLog(@"%@", ((TIUser *)[TIUser MR_findAll][0]).token);
 }
 
 + (void)requestRecentPostWithTagFromId:(NSString *)idString {
-    
     TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTagTokenFromId:idString];
 
     void(^completionBlock)(NSArray *, NSError *) = ^(NSArray* results, NSError *error) {
         FEMMapping *mapping = [TIInstagramPost defaultMapping];
-        NSArray *persons = [FEMDeserializer collectionFromRepresentation:results
-                                                                 mapping:mapping
-                                                                 context:[NSManagedObjectContext MR_defaultContext]];
-        //TODO: add array to context
+        NSArray *posts = [FEMDeserializer collectionFromRepresentation:results
+                                                               mapping:mapping
+                                                               context:[NSManagedObjectContext MR_defaultContext]];
+        for (TIInstagramPost *post in posts) {
+            NSLog(@"%@", post);
+        }
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     };
-//    [request fetchRequestWithComplitionBlock:completionBlock];
-
-
+    [request fetchRequestWithComplitionBlock:completionBlock];
 }
 
 @end

@@ -9,7 +9,7 @@
 #import "TILoginViewController.h"
 #import "TIInstagramManager.h"
 
-extern const NSString* redirect_uri = @"taggedimage://redirect.com";
+const NSString* redirect_uri = @"taggedimage://redirect.com";
 //extern const NSString* redirect_uri_domain = @"redirect.com";
 
 
@@ -37,12 +37,11 @@ extern const NSString* redirect_uri = @"taggedimage://redirect.com";
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     //    [indicator startAnimating];
-    NSString* token = nil;
     NSString *redirect_uri_domain = [redirect_uri componentsSeparatedByString:@"//"][1];
     if ([request.URL.host isEqualToString:(NSString *)redirect_uri_domain]) {
         [TIInstagramManager saveTokenFromRedirectUriRequest:request];
     }
-    [webView removeFromSuperview];
+//    [webView removeFromSuperview];
     return YES;
 }
 

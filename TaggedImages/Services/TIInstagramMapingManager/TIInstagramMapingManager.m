@@ -19,6 +19,7 @@
     NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
                                                              options:kNilOptions
                                                                error:&error];
+    NSLog(@"%@", jsonDict);
     FEMMapping *mapping = [TIInstagramPost defaultMapping];
     [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
                                           mapping:mapping

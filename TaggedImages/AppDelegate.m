@@ -23,7 +23,9 @@
 //    NSData *json = [NSData dataWithContentsOfFile:@"/developing/Yalantis/TaggedImages/TaggedImages/jsonArray.txt"];
     
 //    [TIInstagramManager fetchInstagramPost:json];
-//    [TIInstagramManager requestRecentPostWithTagFromId:@"111"];
+    
+    [TIInstagramManager requestRecentPostWithTagFromId:nil];
+    
     
     return YES;
 }
