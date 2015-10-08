@@ -13,7 +13,7 @@
 
 @interface TITableViewController ()
 
-@property (nonatomic, strong) IBOutlet TITableViewDataSource *allPosts;
+
 
 @end
 

@@ -11,6 +11,6 @@
 
 @interface TIInstagramRequestFactory : NSObject
 
-+ (TIInstagramRequest *)instagramRequestWithTagTokenFromId:(NSString *)idString;
++ (TIInstagramRequest *)instagramRequestWithTag:(NSString *)tag fromId:(NSString *)idString;
 
 @end

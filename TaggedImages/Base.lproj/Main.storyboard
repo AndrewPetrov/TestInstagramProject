@@ -38,7 +38,7 @@
                         <color key="sectionIndexBackgroundColor" red="0.52387573460000003" green="1" blue="0.98145253269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TITableViewCellIdentifier" rowHeight="120" id="p61-3y-Nqx" userLabel="TITableViewCellIdentifier" customClass="TITableViewCell">
-                                <rect key="frame" x="0.0" y="50" width="600" height="120"/>
+                                <rect key="frame" x="0.0" y="49.5" width="600" height="120"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p61-3y-Nqx" id="lwG-Ma-Bif">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
@@ -92,16 +92,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Title" id="cJa-s8-ybn"/>
-                    <connections>
-                        <outlet property="allPosts" destination="VhO-fW-RgG" id="PAg-UK-cqE"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sh6-Sf-VEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="VhO-fW-RgG" userLabel="TITableViewDataSource" customClass="TITableViewDataSource">
-                    <connections>
-                        <outlet property="tableView" destination="Kc9-01-7AB" id="zUa-DJ-E5B"/>
-                    </connections>
-                </customObject>
             </objects>
             <point key="canvasLocation" x="-2732" y="1583"/>
         </scene>
@@ -121,6 +113,9 @@
                                 <rect key="frame" x="276" y="248" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="sarchAction:" destination="KfI-iJ-lNl" eventType="touchUpInside" id="lNn-No-3QU"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tag" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-h6-QPx">
                                 <rect key="frame" x="260" y="200" width="80" height="30"/>
@@ -138,6 +133,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rce-Ff-6Sj"/>
+                    <connections>
+                        <outlet property="tagField" destination="2Kh-h6-QPx" id="QUA-eI-ke4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="20f-JQ-H1r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -194,13 +192,13 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="AAF-lo-jxc"/>
-                                        <exclude reference="eog-YX-crA"/>
-                                        <exclude reference="mCd-T4-gkm"/>
-                                        <exclude reference="HdF-oF-XcB"/>
                                         <exclude reference="EhT-hs-Qzh"/>
+                                        <exclude reference="HdF-oF-XcB"/>
+                                        <exclude reference="eog-YX-crA"/>
                                         <exclude reference="ik1-or-xE0"/>
-                                        <exclude reference="pgk-vT-vIl"/>
+                                        <exclude reference="mCd-T4-gkm"/>
                                         <exclude reference="orx-0G-bbf"/>
+                                        <exclude reference="pgk-vT-vIl"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -216,12 +214,8 @@
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="z5A-l5-zW4"/>
-                    <connections>
-                        <outlet property="allPosts" destination="mf9-xK-ieW" id="Otv-nu-in6"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1u-of-HYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="mf9-xK-ieW" customClass="TICollectionViewDataSource"/>
                 <pongPressGestureRecognizer delaysTouchesBegan="YES" allowableMovement="10" minimumPressDuration="0.5" id="fgC-PR-otb">
                     <connections>
                         <action selector="handleLongPress:" destination="rpx-mC-NlX" id="e4h-X1-E3W"/>
@@ -234,7 +228,6 @@
         <!--Navigation Controller-->
         <scene sceneID="n6c-AE-8R0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="D9n-z8-1zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="hCi-au-jVl" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qwg-8v-wgG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -245,6 +238,7 @@
                         <segue destination="PwV-OQ-K5S" kind="relationship" relationship="rootViewController" id="bGm-LM-gtd"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9n-z8-1zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1319" y="71"/>
         </scene>

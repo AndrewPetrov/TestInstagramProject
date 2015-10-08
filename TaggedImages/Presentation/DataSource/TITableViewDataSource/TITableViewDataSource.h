@@ -7,7 +7,10 @@
 //
 
 #import "TIDataSource.h"
+@class UITableView;
 
 @interface TITableViewDataSource : TIDataSource
+
+@property (nonatomic, strong) UITableView *tableView;
 
 @end

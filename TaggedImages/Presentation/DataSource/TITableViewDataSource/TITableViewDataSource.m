@@ -9,12 +9,10 @@
 #import "TITableViewDataSource.h"
 #import "TITableViewCell.h"
 #import "TIInstagramPost.h"
-
-@interface TITableViewDataSource ()
-
-@property (nonatomic, weak) IBOutlet UITableView *tableView;
-
-@end
+//
+//@interface TITableViewDataSource ()
+//
+//@end
 
 @implementation TITableViewDataSource
 

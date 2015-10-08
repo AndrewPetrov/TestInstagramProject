@@ -12,6 +12,8 @@
 
 @interface TIDataSource : NSObject <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic, strong) NSString *tag;
+
 - (NSInteger)postCount;
 - (TIInstagramPost *)postAtIndex:(NSInteger)index;
 - (NSInteger)tagsCount;

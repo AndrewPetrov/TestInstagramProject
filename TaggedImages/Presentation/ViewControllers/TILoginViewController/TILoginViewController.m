@@ -42,13 +42,10 @@ const NSString* redirect_uri = @"taggedimage://redirect.com";
     NSString *redirect_uri_domain = [[redirect_uri componentsSeparatedByString:@"//"] lastObject];
     if ([request.URL.host isEqualToString:(NSString *)redirect_uri_domain]) {
         [TIInstagramManager saveTokenFromRedirectUriRequest:request];
-        [TIInstagramManager requestRecentPostWithTagFromId:nil];
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         TITagViewController *tagViewController  = [storyboard instantiateViewControllerWithIdentifier:TITagViewControllerIdentifier];
-        TIContainerController *containerController = [[TIContainerController alloc] init];
-        
-        [self.navigationController pushViewController:containerController animated:YES];
+        [self.navigationController pushViewController:tagViewController animated:YES];
     }
     
     return YES;

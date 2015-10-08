@@ -38,8 +38,8 @@
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
-+ (void)requestRecentPostWithTagFromId:(NSString *)idString {
-    TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTagTokenFromId:idString];
++ (void)requestRecentPostWithTag:(NSString *)tag fromId:(NSString *)idString {
+    TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTag:(NSString *)tag fromId:(NSString *)idString];
 
     void(^completionBlock)(NSDictionary *, NSError *) = ^(NSDictionary* results, NSError *error) {
         [TIInstagramMapingManager mapPostsFromJSONArray:results[@"data"]];

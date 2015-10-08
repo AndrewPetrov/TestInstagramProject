@@ -13,6 +13,6 @@
 + (NSURLRequest *)userAuthorizationRequest;
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request;
 //+ (void)fetchInstagramPost:(NSData *)json;
-+ (void)requestRecentPostWithTagFromId:(NSString *)idString;
++ (void)requestRecentPostWithTag:(NSString *)tag fromId:(NSString *)idString;
 
 @end

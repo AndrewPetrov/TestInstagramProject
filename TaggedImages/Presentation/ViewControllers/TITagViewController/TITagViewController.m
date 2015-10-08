@@ -7,8 +7,12 @@
 //
 
 #import "TITagViewController.h"
+#import "TIContainerController.h"
+#import "TIInstagramManager.h"
 
 @interface TITagViewController ()
+
+@property (nonatomic, weak) IBOutlet UITextField *tagField;
 
 @end
 
@@ -30,6 +34,11 @@
 }
 - (void)dealloc {
     NSLog(@"TITagViewController dealloc");
+}
+- (IBAction)sarchAction:(UIButton *)sender {
+    [TIInstagramManager requestRecentPostWithTag:self.tagField.text fromId:nil];
+            TIContainerController *containerController = [TIContainerController  initWithTag:self.tagField.text];
+    [self.navigationController pushViewController:containerController animated:YES];
 }
 
 @end
