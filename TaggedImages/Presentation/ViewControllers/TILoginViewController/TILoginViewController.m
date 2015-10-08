@@ -10,6 +10,7 @@
 #import "TIInstagramManager.h"
 #import "TITagViewController.h"
 #import "TIContainerController.h"
+#import "TIPresentationConstants.h"
 
 const NSString* redirect_uri = @"taggedimage://redirect.com";
 //extern const NSString* redirect_uri_domain = @"redirect.com";
@@ -33,21 +34,26 @@ const NSString* redirect_uri = @"taggedimage://redirect.com";
     [self.loginWebView loadRequest:request];
     
     [self.view addSubview:self.loginWebView];
-
+    
 }
 
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     //    [indicator startAnimating];
-    NSString *redirect_uri_domain = [redirect_uri componentsSeparatedByString:@"//"][1];
+    NSString *redirect_uri_domain = [[redirect_uri componentsSeparatedByString:@"//"] lastObject];
     if ([request.URL.host isEqualToString:(NSString *)redirect_uri_domain]) {
         [TIInstagramManager saveTokenFromRedirectUriRequest:request];
         [TIInstagramManager requestRecentPostWithTagFromId:nil];
-        TITagViewController *tagViewController = [[TITagViewController alloc] init];
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TITagViewController *tagViewController  = [storyboard instantiateViewControllerWithIdentifier:TITagViewControllerIdentifier];
+        TIContainerController *containerController = [[TIContainerController alloc] init];
+        
+        
         [self.navigationController pushViewController:tagViewController animated:YES];
     }
-
+    
     return YES;
 }
 

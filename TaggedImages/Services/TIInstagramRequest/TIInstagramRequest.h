@@ -11,7 +11,7 @@
 @interface TIInstagramRequest : NSObject
 
 + (TIInstagramRequest *)initWithString:(NSString *)string;
-- (void)fetchRequestWithComplitionBlock:(void(^)(NSArray *result, NSError *error))completionBlock;
+- (void)fetchRequestWithComplitionBlock:(void(^)(NSDictionary* results, NSError *error))completionBlock;
 
 @end
 

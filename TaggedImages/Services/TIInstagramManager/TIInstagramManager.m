@@ -26,9 +26,8 @@
 }
 
 + (void)fetchInstagramPost:(NSData *)json {
-    [TIInstagramMapingManager mapPostFromJson:json];
+    [TIInstagramMapingManager mapPostFromJSONObjects:json];
     NSArray *posts = [TIInstagramPost MR_findAll];
-    NSLog(@"%@",posts);
 }
 
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request {
@@ -42,43 +41,11 @@
 + (void)requestRecentPostWithTagFromId:(NSString *)idString {
     TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTagTokenFromId:idString];
 
-    void(^completionBlock)(NSArray *, NSError *) = ^(NSArray* results, NSError *error) {
-        FEMMapping *mapping = [TIInstagramPost defaultMapping];
-        NSArray *posts = [FEMDeserializer collectionFromRepresentation:results
-                                                               mapping:mapping
-                                                               context:[NSManagedObjectContext MR_defaultContext]];
-        for (TIInstagramPost *post in posts) {
-            NSLog(@"%@", post);
-        }
+    void(^completionBlock)(NSDictionary *, NSError *) = ^(NSDictionary* results, NSError *error) {
+        [TIInstagramMapingManager mapPostFromJSONObjects:results];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     };
     [request fetchRequestWithComplitionBlock:completionBlock];
 }
 
 @end
-
-
-
-//
-//InstagramRequest *request = [InstagramRequestFactory getInstrumentsRequest];
-//[request startWithCompletionBlock:completionBlock];
-
-
-
-//
-//
-//+ requestRecentPostsWithTagFromId: {
-//    getTokenFromCoreData
-//    request = [instagramRequestFactory
-//               instagramRequestWithTagAndToken]
-//
-//    completionBlock = ^(...){[InstagramManager +mapPostsFromJSON]};
-//    [request fetchRquestWithCompletionBlock:completionBlock];
-//
-//
-//
-//    {savingToCoredata}}
-//[request fetchRequestWithComplitionBlock ({complitionBlock})];
-
-//returnType (^blockName)(parameterTypes) = ^returnType(parameters) {...};
-//}

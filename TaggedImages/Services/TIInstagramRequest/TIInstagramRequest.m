@@ -24,7 +24,7 @@
     return request;
 }
 
-- (void)fetchRequestWithComplitionBlock:(void(^)(NSArray *result, NSError *error))completionBlock {
+- (void)fetchRequestWithComplitionBlock:(void(^)(NSDictionary* results, NSError *error))completionBlock {
 //    __block NSArray *results;
     // perform request over AFNetworking
     // getting result (list of instruments in JSON fromat) int results paramter;
@@ -37,13 +37,9 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success");
-        NSData *dataFromDict = [NSJSONSerialization dataWithJSONObject:responseObject
-                                                               options:NSJSONWritingPrettyPrinted
-                                                                 error:nil];
-        [TIInstagramMapingManager mapPostFromJson:dataFromDict];
-        //        if (completionBlock) {
-        //            completionBlock(results, nil);
-        //        }
+                if (completionBlock) {
+                    completionBlock((NSDictionary *)responseObject, nil);
+                }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"failure");
     }];

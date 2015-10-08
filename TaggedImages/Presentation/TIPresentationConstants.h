@@ -13,7 +13,6 @@ static NSString * const TITableViewCellIdentifier = @"TITableViewCellIdentifier"
 static NSString * const TICollectionViewCellIdentifier = @"TICollectionViewCellIdentifier";
 static NSString * const TITableViewControllerIdentifier = @"TITableViewControllerIdentifier";
 static NSString * const TICollectionViewControllerIdentifier = @"TICollectionViewControllerIdentifier";
-
-
+static NSString * const TITagViewControllerIdentifier = @"TITagViewControllerIdentifier";
 
 #endif /* TIPresentationConstants_h */

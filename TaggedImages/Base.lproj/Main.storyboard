@@ -108,7 +108,7 @@
         <!--Tag View Controller-->
         <scene sceneID="Zfr-xt-mNk">
             <objects>
-                <viewController id="KfI-iJ-lNl" customClass="TITagViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TITagViewControllerIdentifier" id="KfI-iJ-lNl" customClass="TITagViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="359-tE-qiR"/>
                         <viewControllerLayoutGuide type="bottom" id="GiS-Us-Pul"/>
@@ -230,6 +230,23 @@
                 </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2084" y="1583"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="n6c-AE-8R0">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D9n-z8-1zK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="hCi-au-jVl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qwg-8v-wgG">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PwV-OQ-K5S" kind="relationship" relationship="rootViewController" id="bGm-LM-gtd"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1319" y="71"/>
         </scene>
         <!--Container Controller-->
         <scene sceneID="hmO-z5-ct9">

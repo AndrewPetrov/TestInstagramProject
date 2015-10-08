@@ -14,12 +14,7 @@
 
 @implementation TIInstagramMapingManager
 
-+ (void)mapPostFromJson:(NSData *)jsonData {
-    NSError* error;
-    NSDictionary* jsonDict = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                             options:kNilOptions
-                                                               error:&error];
-//    NSLog(@"%@", jsonDict);
++ (void)mapPostFromJSONObjects:(NSDictionary *)jsonDict {
     FEMMapping *mapping = [TIInstagramPost defaultMapping];
     [FEMDeserializer collectionFromRepresentation:jsonDict[@"data"]
                                           mapping:mapping
