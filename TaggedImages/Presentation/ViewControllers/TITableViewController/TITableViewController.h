@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class TITableViewDataSource;
+@class TITaggedPostsTableViewDataSource;
 
 @interface TITableViewController : UITableViewController
 
-@property (nonatomic, strong) TITableViewDataSource *allPosts;
+@property (nonatomic, strong) TITaggedPostsTableViewDataSource *allPosts;
 
 @end

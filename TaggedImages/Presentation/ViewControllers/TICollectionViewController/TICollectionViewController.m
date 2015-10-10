@@ -8,7 +8,7 @@
 
 #import "TICollectionViewController.h"
 #import "TICollectionViewCell.h"
-#import "TICollectionViewDataSource.h"
+#import "TITaggedPostsCollectionViewDataSource.h"
 #import "TIPresentationConstants.h"
 
 @implementation TICollectionViewController

@@ -23,6 +23,8 @@
     }
     TIInstagramRequest *request = [TIInstagramRequest initWithString:requestString];
     return request;
+    //TODO:  Think about what if we have several users
+//    NSString *tokenString = [TIUser MR_findFirst].token;
 }
 
 @end

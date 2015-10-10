@@ -6,11 +6,11 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import "TIDataSource.h"
+#import "TIITaggedPostsDataSource.h"
 #import <MagicalRecord.h>
 #import "NSFetchedResultsController+Factory.h"
 
-@interface TIDataSource ()
+@interface TIITaggedPostsDataSource ()
 
 @property (nonatomic, strong) NSMutableArray *instagramPosts;
 @property (nonatomic, strong) NSArray *instagramTags;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation TIDataSource
+@implementation TIITaggedPostsDataSource
 
 - (NSInteger)postCount {
     return [self.fetchedResultsController fetchedObjects].count;

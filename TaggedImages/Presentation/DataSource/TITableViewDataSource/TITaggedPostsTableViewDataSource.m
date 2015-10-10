@@ -6,15 +6,23 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import "TITableViewDataSource.h"
+#import "TITaggedPostsTableViewDataSource.h"
 #import "TITableViewCell.h"
 #import "TIInstagramPost.h"
-//
-//@interface TITableViewDataSource ()
-//
-//@end
 
-@implementation TITableViewDataSource
+@interface TITaggedPostsTableViewDataSource ()
+
+
+@end
+
+@implementation TITaggedPostsTableViewDataSource
+
++ (TITaggedPostsTableViewDataSource *)initWithTag:(NSString *)tag tableView:(UITableView *)tableView {
+    TITaggedPostsTableViewDataSource *allPosts = [[TITaggedPostsTableViewDataSource alloc] init];
+    allPosts.tag = tag;
+    allPosts.tableView = tableView;
+    return allPosts;
+}
 
 - (void)configureCell:(TITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     TIInstagramPost *post = [self postAtIndex:indexPath.row];

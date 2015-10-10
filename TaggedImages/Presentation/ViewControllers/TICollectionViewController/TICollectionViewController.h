@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-@class TICollectionViewDataSource;
+@class TITaggedPostsCollectionViewDataSource;
 
 @interface TICollectionViewController : UICollectionViewController <UIGestureRecognizerDelegate>
 
-@property (nonatomic, strong) TICollectionViewDataSource *allPosts;
+@property (nonatomic, strong) TITaggedPostsCollectionViewDataSource *allPosts;
 
 @end

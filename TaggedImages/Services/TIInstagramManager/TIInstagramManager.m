@@ -35,6 +35,7 @@
     NSString *token = urlParams[[urlParams indexOfObject:@"access_token"] + 1];
     TIUser *user = [TIUser MR_createEntity];
     user.token = token;
+    NSLog(@"token ============== %@", token);
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 

@@ -11,9 +11,8 @@
 #import "TICollectionViewController.h"
 #import "UIImage+TaggedImages.h"
 #import "TIPresentationConstants.h"
-#import "TITableViewDataSource.h"
-#import "TIInstagramManager.h"
-#import "TICollectionViewDataSource.h"
+#import "TITaggedPostsTableViewDataSource.h"
+#import "TITaggedPostsCollectionViewDataSource.h"
 
 @interface TIContainerController ()
 
@@ -30,25 +29,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [TIInstagramManager requestRecentPostWithTag:self.tag fromId:nil];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:TITableViewControllerIdentifier];
-    self.tableVC.allPosts = [[TITableViewDataSource alloc] init];
+//    self.tableVC.allPosts = [TITaggedPostsTableViewDataSource initWithTag:self.tag tableView:self.tableVC.tableView];
+    self.tableVC.allPosts = [[TITaggedPostsTableViewDataSource alloc] init];
     self.tableVC.allPosts.tag = self.tag;
-    self.tableVC.allPosts.tableView = self.tableVC.tableView;
-    
+    self.tableVC.allPosts.tableView =  self.tableVC.tableView;
+
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
-    self.collectionVC.allPosts = [[TICollectionViewDataSource alloc] init];
-    self.collectionVC.allPosts.tag = self.tag;
-    self.collectionVC.allPosts.collectionView = self.collectionVC.collectionView;
+    self.collectionVC.allPosts = [TITaggedPostsCollectionViewDataSource initWithTag:self.tag collectionView:self.collectionVC.collectionView];
 //    post TagNotification
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = self.tag;
-    
-    [self displayContentController:self.tableVC];
     self.transitionInProgress = NO;
+ 
+    [self displayContentController:self.tableVC];
 }
 
 - (void)displayContentController:(UIViewController *)content {

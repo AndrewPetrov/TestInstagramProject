@@ -8,7 +8,7 @@
 
 #import "TITableViewController.h"
 #import "TITableViewCell.h"
-#import "TITableViewDataSource.h"
+#import "TITaggedPostsTableViewDataSource.h"
 #import "TIPresentationConstants.h"
 #import "TIInstagramManager.h"
 
@@ -17,6 +17,8 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
+    [TIInstagramManager requestRecentPostWithTag:self.allPosts.tag fromId:nil];
+    
 }
 
 #pragma mark - UITableViewDataSource

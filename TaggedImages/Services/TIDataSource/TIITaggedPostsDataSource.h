@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 @class TIInstagramPost;
 
-@interface TIDataSource : NSObject <NSFetchedResultsControllerDelegate>
+@interface TIITaggedPostsDataSource : NSObject <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSString *tag;
 

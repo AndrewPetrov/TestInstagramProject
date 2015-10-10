@@ -7,17 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TICollectionViewDataSource.h"
+#import "TITaggedPostsCollectionViewDataSource.h"
 
-@interface TICollectionViewDataSource ()
+@interface TITaggedPostsCollectionViewDataSource ()
 
 @property (nonatomic, strong) NSMutableArray *sectionChanges;
 @property (nonatomic, strong) NSMutableArray *itemChanges;
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
+@implementation TITaggedPostsCollectionViewDataSource
 
-@implementation TICollectionViewDataSource
++ (TITaggedPostsCollectionViewDataSource *)initWithTag:(NSString *)tag collectionView:(UICollectionView *)collectionView {
+    TITaggedPostsCollectionViewDataSource *allPosts = [[TITaggedPostsCollectionViewDataSource alloc] init];
+    allPosts.tag = tag;
+    allPosts.collectionView = collectionView;
+    return allPosts;
+}
 
 #pragma mark - NSFetchedResultsControllerDelegate
 
