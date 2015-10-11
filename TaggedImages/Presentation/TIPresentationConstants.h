@@ -16,4 +16,6 @@ static NSString * const TICollectionViewControllerIdentifier = @"TICollectionVie
 static NSString * const TITagViewControllerIdentifier = @"TITagViewControllerIdentifier";
 static NSString * const TIContainerControllerIdentifier = @"TIContainerControllerIdentifier";
 
+static NSInteger const CollectionViewFirstLoadPostsCount = 24;
+
 #endif /* TIPresentationConstants_h */

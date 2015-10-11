@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+@class NSDictionary;
+@class NSError;
+
+typedef void(^TICompletionBlock)(NSDictionary *dictionary, NSError *error);
+
 
 @interface TIInstagramManager : NSObject
 
 + (NSURLRequest *)userAuthorizationRequest;
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request;
-//+ (void)fetchInstagramPost:(NSData *)json;
-+ (void)requestRecentPostWithTag:(NSString *)tag fromId:(NSString *)idString;
++ (void)requestRecentPostWithTag:(NSString *)tag
+                     withNextUrl:(NSString *)nextUrl
+             withComplitionBlock:(TICompletionBlock) completionBlock;
 
 @end

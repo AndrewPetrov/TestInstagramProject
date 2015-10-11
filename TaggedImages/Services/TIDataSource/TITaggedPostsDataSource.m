@@ -6,20 +6,21 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import "TIITaggedPostsDataSource.h"
+#import "TITaggedPostsDataSource.h"
 #import <MagicalRecord.h>
 #import "NSFetchedResultsController+Factory.h"
+#import "TIInstagramManager.h"
+#import "TIInstagramPostsPaginationIDs.h"
+#import "TIInstagramMapingManager.h"
 
-@interface TIITaggedPostsDataSource ()
+@interface TITaggedPostsDataSource ()
 
 @property (nonatomic, strong) NSMutableArray *instagramPosts;
-@property (nonatomic, strong) NSArray *instagramTags;
-
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
-@implementation TIITaggedPostsDataSource
+@implementation TITaggedPostsDataSource
 
 - (NSInteger)postCount {
     return [self.fetchedResultsController fetchedObjects].count;
@@ -43,6 +44,16 @@
         [_fetchedResultsController performFetch:nil];
     }
     return _fetchedResultsController;
+}
+
+- (void)requestRecentPost {
+    TICompletionBlock completionBlock = ^(NSDictionary* results, NSError *error) {
+        self.postsPaginationIDs = [TIInstagramMapingManager mapPaginationIDsFromJSON:results];
+    };
+    
+    [TIInstagramManager requestRecentPostWithTag:self.tag
+                                     withNextUrl:self.postsPaginationIDs.next_url
+                             withComplitionBlock:completionBlock];
 }
 
 @end

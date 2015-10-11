@@ -6,11 +6,11 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import "TIITaggedPostsDataSource.h"
+#import "TITaggedPostsDataSource.h"
 @class UICollectionView;
 @class NSString;
 
-@interface TITaggedPostsCollectionViewDataSource : TIITaggedPostsDataSource
+@interface TITaggedPostsCollectionViewDataSource : TITaggedPostsDataSource
 
 + (TITaggedPostsCollectionViewDataSource *)initWithTag:(NSString *)tag collectionView:(UICollectionView *)collectionView;
 

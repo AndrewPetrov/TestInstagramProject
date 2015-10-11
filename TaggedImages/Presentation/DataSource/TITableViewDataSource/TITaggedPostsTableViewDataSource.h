@@ -6,10 +6,10 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import "TIITaggedPostsDataSource.h"
+#import "TITaggedPostsDataSource.h"
 @class UITableView;
 
-@interface TITaggedPostsTableViewDataSource : TIITaggedPostsDataSource
+@interface TITaggedPostsTableViewDataSource : TITaggedPostsDataSource
 //TODO: move to .m
 @property (nonatomic, strong) UITableView *tableView;
 

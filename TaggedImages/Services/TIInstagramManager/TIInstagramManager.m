@@ -25,28 +25,26 @@
     return [NSURLRequest requestWithURL:[NSURL URLWithString:uriString]];
 }
 
-//+ (void)fetchInstagramPost:(NSData *)json {
-//    [TIInstagramMapingManager mapPostsFromJSONArray:json];
-//    NSArray *posts = [TIInstagramPost MR_findAll];
-//}
-
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request {
     NSArray* urlParams = [request.URL.fragment componentsSeparatedByString:@"="];
     NSString *token = urlParams[[urlParams indexOfObject:@"access_token"] + 1];
     TIUser *user = [TIUser MR_createEntity];
     user.token = token;
-    NSLog(@"token ============== %@", token);
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
 }
 
-+ (void)requestRecentPostWithTag:(NSString *)tag fromId:(NSString *)idString {
-    TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTag:(NSString *)tag fromId:(NSString *)idString];
-
-    void(^completionBlock)(NSDictionary *, NSError *) = ^(NSDictionary* results, NSError *error) {
++ (void)requestRecentPostWithTag:(NSString *)tag
+                     withNextUrl:(NSString *)nextUrl
+             withComplitionBlock:(TICompletionBlock) completionBlock {
+    
+    TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTag:(NSString *)tag
+                                                                         withNextUrl:(NSString *)nextUrl];
+    TICompletionBlock completionBlock1 = ^(NSDictionary* results, NSError *error) {
+        completionBlock(results[@"pagination"], nil);
         [TIInstagramMapingManager mapPostsFromJSONArray:results[@"data"]];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     };
-    [request fetchRequestWithComplitionBlock:completionBlock];
+    [request fetchRequestWithComplitionBlock:completionBlock1];
 }
 
 @end

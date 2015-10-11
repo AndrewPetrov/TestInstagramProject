@@ -48,5 +48,11 @@
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == self.allPosts.postCount - 3) {
+        [self.allPosts requestRecentPost];
+    }
+}
+
 @end
 

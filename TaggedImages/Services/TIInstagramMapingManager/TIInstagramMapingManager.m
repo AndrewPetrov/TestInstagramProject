@@ -10,6 +10,8 @@
 #import <FastEasyMapping.h>
 #import "TIInstagramPost.h"
 #import "TIInstagramPost+Mapping.h"
+#import "TIInstagramPostsPaginationIDs.h"
+#import "TIInstagramPostsPaginationIDs+Mapping.h"
 #import <MagicalRecord.h>
 
 @implementation TIInstagramMapingManager
@@ -20,6 +22,22 @@
                                           mapping:mapping
                                           context:[NSManagedObjectContext MR_defaultContext]];
     [[NSManagedObjectContext MR_defaultContext] save:nil];
+}
+
++ (TIInstagramPostsPaginationIDs *)mapPaginationIDsFromJSON:(NSDictionary *)jsonDictionary {
+    FEMMapping *mapping = [TIInstagramPostsPaginationIDs defaultMapping];
+    //    TIInstagramPostsPaginationIDs *postsPaginationIDs = [[TIInstagramPostsPaginationIDs alloc] init];
+    //    TIInstagramPostsPaginationIDs *postsPaginationIDs = [FEMDeserializer objectFromRepresentation:jsonDictionary
+    //                                                                                          mapping:mapping];
+    
+    TIInstagramPostsPaginationIDs *postsPaginationIDs = [FEMDeserializer objectFromRepresentation:jsonDictionary
+                                                                                          mapping:mapping
+                                                         context:[NSManagedObjectContext MR_defaultContext]];
+    
+    
+    
+    NSLog(@"postsPaginationIDs ================== \n\n%@", postsPaginationIDs);
+    return postsPaginationIDs;
 }
 
 @end

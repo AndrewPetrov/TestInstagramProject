@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q5d-on-0Wk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Q5d-on-0Wk">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -44,7 +44,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="119.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-wp-ZHS">
+                                        <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xVZ-wp-ZHS">
                                             <rect key="frame" x="13" y="13" width="92" height="92"/>
                                             <animations/>
                                             <constraints>
@@ -71,11 +71,13 @@
                                         <constraint firstItem="gms-6C-YBS" firstAttribute="leading" secondItem="xVZ-wp-ZHS" secondAttribute="trailing" constant="5" id="bjU-mL-DIS"/>
                                         <constraint firstItem="gms-6C-YBS" firstAttribute="top" secondItem="lwG-Ma-Bif" secondAttribute="topMargin" constant="5" id="dMS-Nu-cOa"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="gms-6C-YBS" secondAttribute="bottom" constant="5" id="lbe-yD-AUV"/>
+                                        <constraint firstItem="gms-6C-YBS" firstAttribute="leading" secondItem="xVZ-wp-ZHS" secondAttribute="trailing" constant="5" id="xfe-nV-BzK"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="dMS-Nu-cOa"/>
                                             <exclude reference="lbe-yD-AUV"/>
+                                            <exclude reference="xfe-nV-BzK"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>

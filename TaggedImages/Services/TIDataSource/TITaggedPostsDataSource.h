@@ -9,14 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 @class TIInstagramPost;
+@class TIInstagramPostsPaginationIDs;
 
-@interface TIITaggedPostsDataSource : NSObject <NSFetchedResultsControllerDelegate>
+@interface TITaggedPostsDataSource : NSObject <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSString *tag;
+@property (nonatomic, strong) TIInstagramPostsPaginationIDs *postsPaginationIDs;
 
 - (NSInteger)postCount;
 - (TIInstagramPost *)postAtIndex:(NSInteger)index;
 - (NSInteger)tagsCount;
 - (NSArray *)instagramPosts;
+- (void)requestRecentPost;
 
 @end

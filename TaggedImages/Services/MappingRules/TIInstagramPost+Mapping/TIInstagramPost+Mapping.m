@@ -35,7 +35,6 @@
     
     [mapping addAttribute:attribute];
     [mapping addAttributesFromDictionary:@{@"captionText": @"caption.text"}];
-//    [mapping addAttributesFromDictionary:@{@"createdTime": @"created_time"}];
     [mapping addAttributesFromArray:@[@"id"]];
     return mapping;
 }

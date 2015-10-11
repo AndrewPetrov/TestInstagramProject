@@ -32,10 +32,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:TITableViewControllerIdentifier];
-//    self.tableVC.allPosts = [TITaggedPostsTableViewDataSource initWithTag:self.tag tableView:self.tableVC.tableView];
-    self.tableVC.allPosts = [[TITaggedPostsTableViewDataSource alloc] init];
-    self.tableVC.allPosts.tag = self.tag;
-    self.tableVC.allPosts.tableView =  self.tableVC.tableView;
+    self.tableVC.allPosts = [TITaggedPostsTableViewDataSource initWithTag:self.tag tableView:self.tableVC.tableView];
 
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
@@ -87,9 +84,11 @@
     self.transitionInProgress = YES;
     UIViewController *oldVC = [self.childViewControllers lastObject];
     if ([oldVC isEqual:self.tableVC]) {
+        self.collectionVC.allPosts.postsPaginationIDs = self.tableVC.allPosts.postsPaginationIDs;
         [self swapViewController:oldVC toViewController:self.collectionVC];
     }
     else {
+        self.tableVC.allPosts.postsPaginationIDs = self.collectionVC.allPosts.postsPaginationIDs;
         [self swapViewController:oldVC toViewController:self.tableVC];
     }
     [self updateTogglePresentationButtonItemPicture];
