@@ -1,4 +1,4 @@
-//
+
 //  TITableViewController.m
 //  TaggedImages
 //
@@ -40,7 +40,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSLog(@"----------------------%ld", indexPath.row);
     if (indexPath.row == self.allPosts.postCount - 3) {
         [self.allPosts requestRecentPost];
     }
