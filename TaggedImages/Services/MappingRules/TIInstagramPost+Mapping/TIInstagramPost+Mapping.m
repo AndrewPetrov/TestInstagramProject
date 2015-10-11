@@ -13,6 +13,8 @@
 
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:@"TIInstagramPost"];
+    mapping.primaryKey = @"id";
+    
     [mapping addAttributesFromDictionary:@{@"pictureURL": @"images.standard_resolution.url"}];
     
     FEMAttribute *attribute =
@@ -31,11 +33,10 @@
                                     }
                                     return nil;
                                 }];
-    
-    
     [mapping addAttribute:attribute];
     [mapping addAttributesFromDictionary:@{@"captionText": @"caption.text"}];
     [mapping addAttributesFromArray:@[@"id"]];
+    
     return mapping;
 }
 

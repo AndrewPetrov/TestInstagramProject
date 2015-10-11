@@ -18,10 +18,6 @@
 
 + (void)mapPostsFromJSONArray:(NSArray *)jsonArray {
     FEMMapping *mapping = [TIInstagramPost defaultMapping];
-//    for (NSDictionary *dictionary in jsonArray) {
-//        <#statements#>
-//    }
-//    
     [FEMDeserializer collectionFromRepresentation:jsonArray
                                           mapping:mapping
                                           context:[NSManagedObjectContext MR_defaultContext]];
