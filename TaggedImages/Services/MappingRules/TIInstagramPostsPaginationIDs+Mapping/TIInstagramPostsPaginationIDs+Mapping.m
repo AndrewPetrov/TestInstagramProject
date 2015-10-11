@@ -12,7 +12,7 @@
 @implementation TIInstagramPostsPaginationIDs (Mapping)
 
 + (FEMMapping *)defaultMapping {
-    FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:@"TIInstagramPostsPaginationIDs"];
+    FEMMapping *mapping = [[FEMMapping alloc] initWithObjectClass:[TIInstagramPostsPaginationIDs class]];
     [mapping addAttributesFromArray:@[@"next_max_tag_id", @"min_tag_id", @"next_url"]];
     return mapping;
 }

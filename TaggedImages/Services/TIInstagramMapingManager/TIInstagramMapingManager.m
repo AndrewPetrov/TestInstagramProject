@@ -18,6 +18,10 @@
 
 + (void)mapPostsFromJSONArray:(NSArray *)jsonArray {
     FEMMapping *mapping = [TIInstagramPost defaultMapping];
+//    for (NSDictionary *dictionary in jsonArray) {
+//        <#statements#>
+//    }
+//    
     [FEMDeserializer collectionFromRepresentation:jsonArray
                                           mapping:mapping
                                           context:[NSManagedObjectContext MR_defaultContext]];
@@ -25,18 +29,14 @@
 }
 
 + (TIInstagramPostsPaginationIDs *)mapPaginationIDsFromJSON:(NSDictionary *)jsonDictionary {
-    FEMMapping *mapping = [TIInstagramPostsPaginationIDs defaultMapping];
-    //    TIInstagramPostsPaginationIDs *postsPaginationIDs = [[TIInstagramPostsPaginationIDs alloc] init];
-    //    TIInstagramPostsPaginationIDs *postsPaginationIDs = [FEMDeserializer objectFromRepresentation:jsonDictionary
-    //                                                                                          mapping:mapping];
-    
+    FEMMapping *mapping = [TIInstagramPostsPaginationIDs defaultMapping];    
     TIInstagramPostsPaginationIDs *postsPaginationIDs = [FEMDeserializer objectFromRepresentation:jsonDictionary
                                                                                           mapping:mapping
-                                                         context:[NSManagedObjectContext MR_defaultContext]];
+                                                         /*context:[NSManagedObjectContext MR_defaultContext]*/];
     
     
     
-    NSLog(@"postsPaginationIDs ================== \n\n%@", postsPaginationIDs);
+    NSLog(@"postsPaginationIDs ================== \n\n%@\n\npostsPaginationIDs ==================", postsPaginationIDs);
     return postsPaginationIDs;
 }
 

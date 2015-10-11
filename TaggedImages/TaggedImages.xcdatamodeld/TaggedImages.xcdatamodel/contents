@@ -6,17 +6,11 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pictureURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="TIInstagramPostsPaginationIDs" representedClassName="TIInstagramPostsPaginationIDs" syncable="YES">
-        <attribute name="min_tag_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="next_max_tag_id" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="next_url" optional="YES" attributeType="String" syncable="YES"/>
-    </entity>
     <entity name="TIUser" representedClassName="TIUser" syncable="YES">
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
         <element name="TIInstagramPost" positionX="-261" positionY="-54" width="128" height="103"/>
         <element name="TIUser" positionX="-63" positionY="-18" width="128" height="58"/>
-        <element name="TIInstagramPostsPaginationIDs" positionX="-171" positionY="-315" width="128" height="88"/>
     </elements>
 </model>
