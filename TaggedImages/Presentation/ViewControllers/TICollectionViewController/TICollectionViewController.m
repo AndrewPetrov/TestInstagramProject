@@ -50,7 +50,9 @@
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == self.allPosts.postCount - 3) {
-        [self.allPosts requestRecentPost];
+        [self.allPosts performSelectorInBackground:@selector(requestRecentPost) withObject:nil];
+        
+//        [self.allPosts requestRecentPost];
     }
 }
 
