@@ -6,8 +6,8 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import "TIInstagramPostsPaginationIDs.h"
+#import "TIInstagramPostsPaginationInfo.h"
 
-@implementation TIInstagramPostsPaginationIDs
+@implementation TIInstagramPostsPaginationInfo
 
 @end

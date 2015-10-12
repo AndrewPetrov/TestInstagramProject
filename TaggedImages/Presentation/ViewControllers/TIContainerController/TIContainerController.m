@@ -84,11 +84,11 @@
     self.transitionInProgress = YES;
     UIViewController *oldVC = [self.childViewControllers lastObject];
     if ([oldVC isEqual:self.tableVC]) {
-        self.collectionVC.allPosts.postsPaginationIDs = self.tableVC.allPosts.postsPaginationIDs;
+        self.collectionVC.allPosts.postsPaginationInfo = self.tableVC.allPosts.postsPaginationInfo;
         [self swapViewController:oldVC toViewController:self.collectionVC];
     }
     else {
-        self.tableVC.allPosts.postsPaginationIDs = self.collectionVC.allPosts.postsPaginationIDs;
+        self.tableVC.allPosts.postsPaginationInfo = self.collectionVC.allPosts.postsPaginationInfo;
         [self swapViewController:oldVC toViewController:self.tableVC];
     }
     [self updateTogglePresentationButtonItemPicture];

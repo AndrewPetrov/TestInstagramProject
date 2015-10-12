@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TIInstagramPostsPaginationIDs : NSObject
+@interface TIInstagramPostsPaginationInfo : NSObject
 
 @property (nonatomic, strong) NSString *next_max_tag_id;
 @property (nonatomic, strong) NSString *min_tag_id;

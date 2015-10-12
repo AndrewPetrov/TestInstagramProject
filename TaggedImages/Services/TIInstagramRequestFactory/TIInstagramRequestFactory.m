@@ -11,13 +11,15 @@
 #import "TIUser.h"
 #import <MagicalRecord.h>
 #import "TIPresentationConstants.h"
+#import "TIInstagramPostsPaginationInfo.h"
 
 @implementation TIInstagramRequestFactory
 
-+ (TIInstagramRequest *)instagramRequestWithTag:(NSString *)tag withNextUrl:(NSString *)nextUrl {
++ (TIInstagramRequest *)instagramRequestWithTag:(NSString *)tag
+                                 paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo {
     NSString *requestString;
-    if (nextUrl) {
-        requestString = nextUrl;
+    if (paginationInfo) {
+        requestString = paginationInfo.next_url;
     } else {
         NSString *tokenString = [TIUser MR_findFirst].token;
         requestString =

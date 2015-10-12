@@ -6,10 +6,10 @@
 //  Copyright © 2015 AndrewPetrov. All rights reserved.
 //
 
-#import "TIInstagramPostsPaginationIDs.h"
+#import "TIInstagramPostsPaginationInfo.h"
 @class FEMMapping;
 
-@interface TIInstagramPostsPaginationIDs (Mapping)
+@interface TIInstagramPostsPaginationInfo (Mapping)
 
 + (FEMMapping *)defaultMapping;
 

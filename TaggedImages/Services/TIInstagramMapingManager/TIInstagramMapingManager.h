@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-@class TIInstagramPostsPaginationIDs;
+@class TIInstagramPostsPaginationInfo;
 
 @interface TIInstagramMapingManager : NSObject
 
 + (void)mapPostsFromJSONArray:(NSArray *)jsonArray;
-+ (TIInstagramPostsPaginationIDs *)mapPaginationIDsFromJSON:(NSDictionary *)jsonDictionary;
++ (TIInstagramPostsPaginationInfo *)mapPaginationInfoFromJSONDictionary:(NSDictionary *)jsonDictionary;
 
 @end

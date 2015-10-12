@@ -10,7 +10,6 @@
 
 @interface NSFetchedResultsController (Factory)
 
-+ (NSFetchedResultsController *)postsFRC;
-+ (NSFetchedResultsController *)tagsFRC;
++ (NSFetchedResultsController *)instagramPostsFRCWithTag:(NSString *)tag;
 
 @end

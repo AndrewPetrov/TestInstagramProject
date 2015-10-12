@@ -6,7 +6,7 @@
 extern const struct TIInstagramPostAttributes {
 	__unsafe_unretained NSString *captionText;
 	__unsafe_unretained NSString *createdTime;
-	__unsafe_unretained NSString *id;
+	__unsafe_unretained NSString *identifier;
 	__unsafe_unretained NSString *pictureURL;
 } TIInstagramPostAttributes;
 
@@ -27,9 +27,9 @@ extern const struct TIInstagramPostAttributes {
 
 //- (BOOL)validateCreatedTime:(id*)value_ error:(NSError**)error_;
 
-@property (nonatomic, strong) NSString* id;
+@property (nonatomic, strong) NSString* identifier;
 
-//- (BOOL)validateId:(id*)value_ error:(NSError**)error_;
+//- (BOOL)validateIdentifier:(id*)value_ error:(NSError**)error_;
 
 @property (nonatomic, strong) NSString* pictureURL;
 
@@ -45,8 +45,8 @@ extern const struct TIInstagramPostAttributes {
 - (NSDate*)primitiveCreatedTime;
 - (void)setPrimitiveCreatedTime:(NSDate*)value;
 
-- (NSString*)primitiveId;
-- (void)setPrimitiveId:(NSString*)value;
+- (NSString*)primitiveIdentifier;
+- (void)setPrimitiveIdentifier:(NSString*)value;
 
 - (NSString*)primitivePictureURL;
 - (void)setPrimitivePictureURL:(NSString*)value;

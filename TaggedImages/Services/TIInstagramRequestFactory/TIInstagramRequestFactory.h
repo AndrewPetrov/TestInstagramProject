@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 @class TIInstagramRequest;
+@class TIInstagramPostsPaginationInfo;
 
 @interface TIInstagramRequestFactory : NSObject
 
-+ (TIInstagramRequest *)instagramRequestWithTag:(NSString *)tag withNextUrl:(NSString *)nextUrl;
++ (TIInstagramRequest *)instagramRequestWithTag:(NSString *)tag
+                                 paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo;
 
 @end

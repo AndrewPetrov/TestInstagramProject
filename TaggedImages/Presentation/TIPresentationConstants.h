@@ -16,6 +16,12 @@ static NSString * const TICollectionViewControllerIdentifier = @"TICollectionVie
 static NSString * const TITagViewControllerIdentifier = @"TITagViewControllerIdentifier";
 static NSString * const TIContainerControllerIdentifier = @"TIContainerControllerIdentifier";
 
-static NSInteger const CollectionViewFirstLoadPostsCount = 24;
+static NSInteger const CollectionViewFirstLoadPostsCount = 25;
+static NSInteger const PostsCountLoadingHandicap = 5;
+
+//static NSString * const TIInstagramRequestFirstStringPart = @"";
 
 #endif /* TIPresentationConstants_h */
+
+
+

@@ -17,6 +17,7 @@
 #import <AFNetworking.h>
 #import "TILoginViewController.h"
 #import "TIUser.h"
+#import "TIInstagramPostsPaginationInfo.h"
 
 @implementation TIInstagramManager
 
@@ -26,7 +27,7 @@
 }
 
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request {
-    NSArray* urlParams = [request.URL.fragment componentsSeparatedByString:@"="];
+    NSArray *urlParams = [request.URL.fragment componentsSeparatedByString:@"="];
     NSString *token = urlParams[[urlParams indexOfObject:@"access_token"] + 1];
     TIUser *user = [TIUser MR_createEntity];
     user.token = token;
@@ -34,13 +35,14 @@
 }
 
 + (void)requestRecentPostWithTag:(NSString *)tag
-                     withNextUrl:(NSString *)nextUrl
-             withComplitionBlock:(TICompletionBlock) completionBlock {
+                  paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
+                 complitionBlock:(TICompletionBlock) completionBlock {
     
-    TIInstagramRequest* request = [TIInstagramRequestFactory instagramRequestWithTag:(NSString *)tag
-                                                                         withNextUrl:(NSString *)nextUrl];
-    TICompletionBlock completionBlock1 = ^(NSDictionary* results, NSError *error) {
-        completionBlock(results[@"pagination"], nil);
+    TIInstagramRequest *request = [TIInstagramRequestFactory instagramRequestWithTag:tag paginationInfo:paginationInfo];
+    
+    void (^completionBlock1)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {
+        TIInstagramPostsPaginationInfo *paginationInfoResult = [TIInstagramMapingManager mapPaginationInfoFromJSONDictionary:results[@"pagination"]];
+        completionBlock(paginationInfoResult, nil);
         [TIInstagramMapingManager mapPostsFromJSONArray:results[@"data"]];
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     };

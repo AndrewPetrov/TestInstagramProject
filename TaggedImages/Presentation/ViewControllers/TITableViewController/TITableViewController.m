@@ -40,9 +40,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.allPosts.postCount - 3) {
-        [self.allPosts performSelectorInBackground:@selector(requestRecentPost) withObject:nil];
-//        [self.allPosts requestRecentPost];
+    if (indexPath.row == self.allPosts.postCount - PostsCountLoadingHandicap) {
+        [self.allPosts requestRecentPost];
     }
 }
 

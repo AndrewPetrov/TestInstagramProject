@@ -25,9 +25,6 @@
 }
 
 - (void)fetchRequestWithComplitionBlock:(void(^)(NSDictionary* results, NSError *error))completionBlock {
-//    __block NSArray *results;
-    // perform request over AFNetworking
-    // getting result (list of instruments in JSON fromat) int results paramter;
     
     NSURL *url = [NSURL URLWithString:self.requestString];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -37,14 +34,12 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success");
-                if (completionBlock) {
-                    completionBlock((NSDictionary *)responseObject, nil);
-                }
+        if (completionBlock) {
+            completionBlock((NSDictionary *)responseObject, nil);
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"failure");
     }];
-    
     [operation start];
-
 }
 @end

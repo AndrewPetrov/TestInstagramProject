@@ -8,15 +8,18 @@
 
 #import "NSFetchedResultsController+Factory.h"
 #import "TIInstagramPost.h"
+//#import "TIInstagramTag.h"
+
 #import <MagicalRecord.h>
 
 @implementation NSFetchedResultsController (Factory)
 
-+ (NSFetchedResultsController *)postsFRC {
-    return [TIInstagramPost MR_fetchAllGroupedBy:nil withPredicate:nil sortedBy:@"createdTime" ascending:NO];
-}
-+ (NSFetchedResultsController *)tagsFRC {
-    return nil;
++ (NSFetchedResultsController *)instagramPostsFRCWithTag:(NSString *)tag {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tag = %@", tag];
+    return [TIInstagramPost MR_fetchAllGroupedBy:nil
+                                   withPredicate:nil
+                                        sortedBy:@"createdTime"
+                                       ascending:NO];
 }
 
 @end

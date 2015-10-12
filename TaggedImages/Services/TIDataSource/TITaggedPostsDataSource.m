@@ -10,8 +10,7 @@
 #import <MagicalRecord.h>
 #import "NSFetchedResultsController+Factory.h"
 #import "TIInstagramManager.h"
-#import "TIInstagramPostsPaginationIDs.h"
-#import "TIInstagramMapingManager.h"
+#import "TIInstagramPostsPaginationInfo.h"
 
 @interface TITaggedPostsDataSource ()
 
@@ -39,7 +38,7 @@
 
 - (NSFetchedResultsController *)fetchedResultsController {
     if (!_fetchedResultsController) {
-        _fetchedResultsController = [NSFetchedResultsController postsFRC];
+        _fetchedResultsController = [NSFetchedResultsController instagramPostsFRCWithTag:self.tag];
         _fetchedResultsController.delegate = self;
         [_fetchedResultsController performFetch:nil];
     }
@@ -47,13 +46,12 @@
 }
 
 - (void)requestRecentPost {
-    TICompletionBlock completionBlock = ^(NSDictionary* results, NSError *error) {
-        self.postsPaginationIDs = [TIInstagramMapingManager mapPaginationIDsFromJSON:results];
+    TICompletionBlock completionBlock = ^(TIInstagramPostsPaginationInfo* info, NSError *error) {
+        self.postsPaginationInfo = info;
     };
-    
     [TIInstagramManager requestRecentPostWithTag:self.tag
-                                     withNextUrl:self.postsPaginationIDs.next_url
-                             withComplitionBlock:completionBlock];
+                                  paginationInfo:self.postsPaginationInfo
+                                 complitionBlock:completionBlock];
 }
 
 @end
