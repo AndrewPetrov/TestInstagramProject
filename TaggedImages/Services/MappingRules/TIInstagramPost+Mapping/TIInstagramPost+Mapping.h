@@ -11,6 +11,6 @@
 
 @interface TIInstagramPost (Mapping)
 
-+ (FEMMapping *)defaultMapping;
++ (FEMMapping *)defaultMappingWithRequestedTag:(NSString *)requestedTag;
 
 @end

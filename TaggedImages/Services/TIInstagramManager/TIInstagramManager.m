@@ -43,7 +43,8 @@
     void (^completionBlock1)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {
         TIInstagramPostsPaginationInfo *paginationInfoResult = [TIInstagramMapingManager mapPaginationInfoFromJSONDictionary:results[@"pagination"]];
         completionBlock(paginationInfoResult, nil);
-        [TIInstagramMapingManager mapPostsFromJSONArray:results[@"data"]];
+        [TIInstagramMapingManager mapPostsFromJSONArray:results[@"data"] withRequestedTag:tag];
+
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
     };
     [request fetchRequestWithComplitionBlock:completionBlock1];

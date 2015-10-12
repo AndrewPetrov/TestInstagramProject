@@ -8,6 +8,7 @@ const struct TIInstagramPostAttributes TIInstagramPostAttributes = {
 	.createdTime = @"createdTime",
 	.identifier = @"identifier",
 	.pictureURL = @"pictureURL",
+	.tag = @"tag",
 };
 
 @implementation TIInstagramPostID
@@ -46,6 +47,8 @@ const struct TIInstagramPostAttributes TIInstagramPostAttributes = {
 @dynamic identifier;
 
 @dynamic pictureURL;
+
+@dynamic tag;
 
 @end
 

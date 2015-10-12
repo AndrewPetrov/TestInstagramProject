@@ -11,7 +11,7 @@
 
 @implementation TIInstagramPost (Mapping)
 
-+ (FEMMapping *)defaultMapping {
++ (FEMMapping *)defaultMappingWithRequestedTag:(NSString *)requestedTag {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:@"TIInstagramPost"];
     mapping.primaryKey = @"identifier";
     
@@ -34,9 +34,20 @@
                                     return nil;
                                 }];
     [mapping addAttribute:attribute];
+    
+    FEMAttribute *tagAttribute =
+    [[FEMAttribute alloc] initWithProperty:@"tag"
+                                   keyPath:@"tags"
+                                       map:^id(id value) {
+                                           return requestedTag;
+                                       }
+                                reverseMap:^id(id value) {
+                                    return nil;
+                                }];
+    [mapping addAttribute:tagAttribute];
+    
     [mapping addAttributesFromDictionary:@{@"captionText": @"caption.text"}];
     [mapping addAttributesFromDictionary:@{@"identifier": @"id"}];
-    
     
     return mapping;
 }

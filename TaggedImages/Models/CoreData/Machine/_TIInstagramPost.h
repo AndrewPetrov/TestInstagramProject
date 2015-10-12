@@ -8,6 +8,7 @@ extern const struct TIInstagramPostAttributes {
 	__unsafe_unretained NSString *createdTime;
 	__unsafe_unretained NSString *identifier;
 	__unsafe_unretained NSString *pictureURL;
+	__unsafe_unretained NSString *tag;
 } TIInstagramPostAttributes;
 
 @interface TIInstagramPostID : NSManagedObjectID {}
@@ -35,6 +36,10 @@ extern const struct TIInstagramPostAttributes {
 
 //- (BOOL)validatePictureURL:(id*)value_ error:(NSError**)error_;
 
+@property (nonatomic, strong) NSString* tag;
+
+//- (BOOL)validateTag:(id*)value_ error:(NSError**)error_;
+
 @end
 
 @interface _TIInstagramPost (CoreDataGeneratedPrimitiveAccessors)
@@ -50,5 +55,8 @@ extern const struct TIInstagramPostAttributes {
 
 - (NSString*)primitivePictureURL;
 - (void)setPrimitivePictureURL:(NSString*)value;
+
+- (NSString*)primitiveTag;
+- (void)setPrimitiveTag:(NSString*)value;
 
 @end

@@ -11,7 +11,7 @@
 
 @interface TIInstagramMapingManager : NSObject
 
-+ (void)mapPostsFromJSONArray:(NSArray *)jsonArray;
++ (void)mapPostsFromJSONArray:(NSArray *)jsonArray withRequestedTag:(NSString *)requestedTag;
 + (TIInstagramPostsPaginationInfo *)mapPaginationInfoFromJSONDictionary:(NSDictionary *)jsonDictionary;
 
 @end

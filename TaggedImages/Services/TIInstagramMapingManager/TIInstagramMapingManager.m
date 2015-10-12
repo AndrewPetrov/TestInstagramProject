@@ -16,8 +16,8 @@
 
 @implementation TIInstagramMapingManager
 
-+ (void)mapPostsFromJSONArray:(NSArray *)jsonArray {
-    FEMMapping *mapping = [TIInstagramPost defaultMapping];
++ (void)mapPostsFromJSONArray:(NSArray *)jsonArray withRequestedTag:(NSString *)requestedTag {
+    FEMMapping *mapping = [TIInstagramPost defaultMappingWithRequestedTag:requestedTag];
     [FEMDeserializer collectionFromRepresentation:jsonArray
                                           mapping:mapping
                                           context:[NSManagedObjectContext MR_defaultContext]];

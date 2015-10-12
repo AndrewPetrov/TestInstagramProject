@@ -5,12 +5,13 @@
         <attribute name="createdTime" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pictureURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tag" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="TIUser" representedClassName="TIUser" syncable="YES">
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TIInstagramPost" positionX="-261" positionY="-54" width="126" height="103"/>
+        <element name="TIInstagramPost" positionX="-261" positionY="-54" width="126" height="118"/>
         <element name="TIUser" positionX="-171" positionY="-211" width="128" height="58"/>
     </elements>
 </model>

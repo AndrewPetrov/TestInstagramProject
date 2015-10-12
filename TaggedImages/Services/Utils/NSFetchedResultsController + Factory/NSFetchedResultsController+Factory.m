@@ -17,7 +17,7 @@
 + (NSFetchedResultsController *)instagramPostsFRCWithTag:(NSString *)tag {
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tag = %@", tag];
     return [TIInstagramPost MR_fetchAllGroupedBy:nil
-                                   withPredicate:nil
+                                   withPredicate:predicate
                                         sortedBy:@"createdTime"
                                        ascending:NO];
 }
