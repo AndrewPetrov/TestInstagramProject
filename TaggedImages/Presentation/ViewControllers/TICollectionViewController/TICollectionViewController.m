@@ -39,5 +39,12 @@
     }
 }
 
+#pragma mark - TITaggedPostsDataSourceProtoco
+
+- (void)dataSourceIsUpdated {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.allPosts.postCount - TITaggedPostsPageSize) inSection:0];
+    [self.collectionView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom  animated:YES];
+}
+
 @end
 

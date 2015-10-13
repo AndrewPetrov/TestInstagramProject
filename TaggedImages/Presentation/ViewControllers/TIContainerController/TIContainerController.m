@@ -38,6 +38,7 @@
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
     self.collectionVC.allPosts = [TITaggedPostsCollectionViewDataSource initWithTag:self.tag collectionView:self.collectionVC.collectionView];
+    self.collectionVC.allPosts.delegate = self.tableVC;
 
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = self.tag;
