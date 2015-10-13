@@ -16,7 +16,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
+    self.tableView.contentInset = UIEdgeInsetsMake(TINavigationBarHeight,0,0,0);
 }
 
 - (void)viewWillAppear:(BOOL)animated {

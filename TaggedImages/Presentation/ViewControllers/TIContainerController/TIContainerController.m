@@ -28,22 +28,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:TITableViewControllerIdentifier];
     self.tableVC.allPosts = [TITaggedPostsTableViewDataSource initWithTag:self.tag tableView:self.tableVC.tableView];
     
-    
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
-    self.collectionVC.allPosts = [TITaggedPostsCollectionViewDataSource initWithTag:self.tag collectionView:self.collectionVC.collectionView];
+    self.collectionVC.allPosts = [TITaggedPostsCollectionViewDataSource initWithTag:self.tag
+                                                                     collectionView:self.collectionVC.collectionView];
     
-
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = [NSString stringWithFormat:@"#%@",self.tag];
     self.transitionInProgress = NO;
- 
+    float ContainerTargetHeight = self.navigationController.navigationBar.frame.size.height;
+    NSLog(@"ContainerTargetHeight ==== %f", ContainerTargetHeight);
+        NSLog(@"ContainerViewController ==== %@", self);
     [self displayContentController:self.tableVC];
 }
 

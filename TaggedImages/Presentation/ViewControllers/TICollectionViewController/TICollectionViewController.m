@@ -15,7 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationController.navigationBar.translucent = NO;
+    self.collectionView.contentInset = UIEdgeInsetsMake(TINavigationBarHeight,0,0,0);
 }
 
 #pragma mark - UICollectionViewDataSource

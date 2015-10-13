@@ -30,4 +30,6 @@ static NSString * const TIInstagramTokenKey = @"access_token";
 static NSString * const TIInstagramPaginationKey = @"pagination";
 static NSString * const TIInstagramDataKey = @"data";
 
+static CGFloat const TINavigationBarHeight = 44.f;
+
 #endif /* TIPresentationConstants_h */
