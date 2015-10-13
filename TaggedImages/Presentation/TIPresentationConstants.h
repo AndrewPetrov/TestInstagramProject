@@ -20,7 +20,8 @@ static NSInteger const TITaggedPostsPageSize = 30;
 static NSInteger const TIPostsCountLoadingHandicap = 3;
 
 static NSString * const TIInstagramAuthorizationRequestString =
-@"https://api.instagram.com/oauth/authorize/?client_id=482b2956910b48ef9f33157622977803&redirect_uri=%@&response_type=token";
+    @"https://api.instagram.com/oauth/authorize/?client_id=482b2956910b48ef9f33157622977803&"
+    "redirect_uri=%@&response_type=token";
 static NSString * const TIInstagramPostsRequestString =
 @"https://api.instagram.com/v1/tags/%@/media/recent?access_token=%@&count=%ld";
 static NSString * const TITaggedimageRedirectString = @"taggedimage://redirect.com";

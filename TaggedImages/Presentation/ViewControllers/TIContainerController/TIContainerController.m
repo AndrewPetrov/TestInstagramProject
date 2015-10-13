@@ -41,7 +41,7 @@
     
 
     self.togglePresentationImage = [UIImage collectionImage];
-    self.navigationItem.title = self.tag;
+    self.navigationItem.title = [NSString stringWithFormat:@"#%@",self.tag];
     self.transitionInProgress = NO;
  
     [self displayContentController:self.tableVC];

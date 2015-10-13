@@ -119,18 +119,31 @@
                                     <action selector="sarchAction:" destination="KfI-iJ-lNl" eventType="touchUpInside" id="lNn-No-3QU"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-h6-QPx">
-                                <rect key="frame" x="260" y="200" width="80" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tag" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-h6-QPx">
+                                <rect key="frame" x="200" y="200" width="200" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="jVX-Ah-h5S"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWw-mk-bLm">
+                                <rect key="frame" x="184.5" y="204" width="10.5" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
+                        <color key="backgroundColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2Kh-h6-QPx" firstAttribute="baseline" secondItem="yWw-mk-bLm" secondAttribute="baseline" id="7OX-yu-dle"/>
                             <constraint firstItem="jVc-3z-W0O" firstAttribute="centerX" secondItem="2Kh-h6-QPx" secondAttribute="centerX" id="Lcj-AN-aaQ"/>
                             <constraint firstItem="jVc-3z-W0O" firstAttribute="top" secondItem="2Kh-h6-QPx" secondAttribute="bottom" constant="18" id="d5P-mW-lqu"/>
                             <constraint firstItem="GiS-Us-Pul" firstAttribute="top" secondItem="jVc-3z-W0O" secondAttribute="bottom" constant="322" id="eOB-F8-itt"/>
+                            <constraint firstItem="2Kh-h6-QPx" firstAttribute="leading" secondItem="yWw-mk-bLm" secondAttribute="trailing" constant="5" id="g77-pk-F6C"/>
                             <constraint firstItem="2Kh-h6-QPx" firstAttribute="centerX" secondItem="a6M-LC-xw0" secondAttribute="centerX" id="qld-OH-ldP"/>
                         </constraints>
                     </view>
