@@ -10,7 +10,7 @@
 #import "TIInstagramRequest.h"
 #import "TIUser.h"
 #import <MagicalRecord.h>
-#import "TIPresentationConstants.h"
+#import "TIServicesConstants.h"
 #import "TIInstagramPostsPaginationInfo.h"
 
 @implementation TIInstagramRequestFactory
@@ -25,7 +25,8 @@
         requestString =
         [NSString stringWithFormat:TIInstagramPostsRequestString, tag, tokenString, TITaggedPostsPageSize];
     }
-    return [TIInstagramRequest initWithUrl:requestString];
+    NSURL *url = [NSURL URLWithString:requestString];
+    return [TIInstagramRequest initWithUrl:url];
 }
 
 @end

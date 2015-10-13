@@ -7,11 +7,10 @@
 //
 
 #import "TITaggedPostsDataSource.h"
+
 @class UITableView;
 
 @interface TITaggedPostsTableViewDataSource : TITaggedPostsDataSource
-//TODO: move to .m
-@property (nonatomic, strong) UITableView *tableView;
 
 + (TITaggedPostsTableViewDataSource *)initWithTag:(NSString *)tag tableView:(UITableView *)tableView;
 

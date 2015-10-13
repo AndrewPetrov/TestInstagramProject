@@ -73,6 +73,7 @@
 		772C92DC1BCC2BE500E3E436 /* TIInstagramPostsPaginationInfo+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIInstagramPostsPaginationInfo+Mapping.m"; sourceTree = "<group>"; };
 		772C92DF1BCC589C00E3E436 /* TIInstagramPostsPaginationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIInstagramPostsPaginationInfo.h; sourceTree = "<group>"; };
 		772C92E01BCC589C00E3E436 /* TIInstagramPostsPaginationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TIInstagramPostsPaginationInfo.m; sourceTree = "<group>"; };
+		772C92E21BCD35CE00E3E436 /* TIServicesConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TIServicesConstants.h; sourceTree = "<group>"; };
 		77502F041BC5F8F700AAE06F /* TIInstagramPost+Mapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TIInstagramPost+Mapping.h"; sourceTree = "<group>"; };
 		77502F051BC5F8F700AAE06F /* TIInstagramPost+Mapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TIInstagramPost+Mapping.m"; sourceTree = "<group>"; };
 		77502F071BC5F8F700AAE06F /* TIInstagramManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TIInstagramManager.h; sourceTree = "<group>"; };
@@ -226,6 +227,7 @@
 		77502F011BC5F8F700AAE06F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				772C92E21BCD35CE00E3E436 /* TIServicesConstants.h */,
 				77502F1B1BC5FBBC00AAE06F /* Utils */,
 				77502F171BC5F92D00AAE06F /* TIDataSource */,
 				77502F021BC5F8F700AAE06F /* MappingRules */,

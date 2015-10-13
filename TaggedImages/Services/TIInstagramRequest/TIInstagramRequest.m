@@ -12,22 +12,20 @@
 
 @interface TIInstagramRequest ()
 
-@property (nonatomic, strong) NSString *requestString;
+@property (nonatomic, strong) NSURL *requestUrl;
 
 @end
 
 @implementation TIInstagramRequest
 
-+ (TIInstagramRequest *)initWithUrl:(NSString *)url {
++ (TIInstagramRequest *)initWithUrl:(NSURL *)url {
     TIInstagramRequest *request = [[TIInstagramRequest alloc] init];
-    request.requestString = url;
+    request.requestUrl = url;
     return request;
 }
 
 - (void)fetchRequestWithComplitionBlock:(void(^)(NSDictionary* results, NSError *error))completionBlock {
-    
-    NSURL *url = [NSURL URLWithString:self.requestString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLRequest *request = [NSURLRequest requestWithURL:self.requestUrl];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     operation.responseSerializer = [AFJSONResponseSerializer serializer];

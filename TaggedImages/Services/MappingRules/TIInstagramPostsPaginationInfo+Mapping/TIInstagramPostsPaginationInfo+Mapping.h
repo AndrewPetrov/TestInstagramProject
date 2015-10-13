@@ -7,6 +7,7 @@
 //
 
 #import "TIInstagramPostsPaginationInfo.h"
+
 @class FEMMapping;
 
 @interface TIInstagramPostsPaginationInfo (Mapping)

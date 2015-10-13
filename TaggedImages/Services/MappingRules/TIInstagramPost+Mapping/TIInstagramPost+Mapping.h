@@ -7,6 +7,7 @@
 //
 
 #import "TIInstagramPost.h"
+
 @class FEMMapping;
 
 @interface TIInstagramPost (Mapping)

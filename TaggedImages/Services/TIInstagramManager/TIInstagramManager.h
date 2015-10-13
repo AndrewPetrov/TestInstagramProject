@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class NSDictionary;
 @class NSError;
 @class TIInstagramPostsPaginationInfo;

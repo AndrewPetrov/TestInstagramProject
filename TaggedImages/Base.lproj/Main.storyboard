@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVc-3z-W0O">
-                                <rect key="frame" x="276" y="248" width="48" height="30"/>
+                                <rect key="frame" x="276" y="333" width="48" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Search"/>
                                 <connections>
@@ -121,7 +121,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tag" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-h6-QPx">
-                                <rect key="frame" x="200" y="200" width="200" height="30"/>
+                                <rect key="frame" x="200" y="285" width="200" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="jVX-Ah-h5S"/>
@@ -130,7 +130,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWw-mk-bLm">
-                                <rect key="frame" x="184.5" y="204" width="10.5" height="20.5"/>
+                                <rect key="frame" x="184.5" y="289" width="10.5" height="20.5"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -142,8 +142,8 @@
                         <constraints>
                             <constraint firstItem="2Kh-h6-QPx" firstAttribute="baseline" secondItem="yWw-mk-bLm" secondAttribute="baseline" id="7OX-yu-dle"/>
                             <constraint firstItem="jVc-3z-W0O" firstAttribute="centerX" secondItem="2Kh-h6-QPx" secondAttribute="centerX" id="Lcj-AN-aaQ"/>
+                            <constraint firstItem="2Kh-h6-QPx" firstAttribute="centerY" secondItem="a6M-LC-xw0" secondAttribute="centerY" id="aXt-1q-Fly"/>
                             <constraint firstItem="jVc-3z-W0O" firstAttribute="top" secondItem="2Kh-h6-QPx" secondAttribute="bottom" constant="18" id="d5P-mW-lqu"/>
-                            <constraint firstItem="GiS-Us-Pul" firstAttribute="top" secondItem="jVc-3z-W0O" secondAttribute="bottom" constant="322" id="eOB-F8-itt"/>
                             <constraint firstItem="2Kh-h6-QPx" firstAttribute="leading" secondItem="yWw-mk-bLm" secondAttribute="trailing" constant="5" id="g77-pk-F6C"/>
                             <constraint firstItem="2Kh-h6-QPx" firstAttribute="centerX" secondItem="a6M-LC-xw0" secondAttribute="centerX" id="qld-OH-ldP"/>
                         </constraints>

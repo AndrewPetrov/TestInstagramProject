@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TITaggedPostsDataSource.h"
+
 @class TITaggedPostsCollectionViewDataSource;
 
 @interface TICollectionViewController : UICollectionViewController

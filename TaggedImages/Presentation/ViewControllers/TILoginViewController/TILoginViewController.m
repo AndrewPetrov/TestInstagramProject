@@ -11,6 +11,7 @@
 #import "TITagViewController.h"
 #import "TIContainerController.h"
 #import "TIPresentationConstants.h"
+#import "TIServicesConstants.h"
 
 @interface TILoginViewController () <UIWebViewDelegate>
 
@@ -35,7 +36,6 @@
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    //    [indicator startAnimating];
     NSString *redirect_uri_domain = [[TITaggedimageRedirectString componentsSeparatedByString:@"//"] lastObject];
     if ([request.URL.host isEqualToString:(NSString *)redirect_uri_domain]) {
         [TIInstagramManager saveTokenFromRedirectUriRequest:request];

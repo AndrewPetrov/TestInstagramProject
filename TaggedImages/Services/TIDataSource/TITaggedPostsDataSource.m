@@ -14,7 +14,6 @@
 
 @interface TITaggedPostsDataSource ()
 
-@property (nonatomic, strong) NSMutableArray *instagramPosts;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end

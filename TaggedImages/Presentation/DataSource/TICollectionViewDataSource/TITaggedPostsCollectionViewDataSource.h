@@ -7,6 +7,7 @@
 //
 
 #import "TITaggedPostsDataSource.h"
+
 @class UICollectionView;
 @class NSString;
 

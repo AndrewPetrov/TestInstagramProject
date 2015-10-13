@@ -10,7 +10,7 @@
 
 @interface TIInstagramRequest : NSObject
 
-+ (TIInstagramRequest *)initWithUrl:(NSString *)url;
++ (TIInstagramRequest *)initWithUrl:(NSURL *)url;
 - (void)fetchRequestWithComplitionBlock:(void(^)(NSDictionary* results, NSError *error))completionBlock;
 
 @end

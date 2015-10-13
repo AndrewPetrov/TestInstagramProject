@@ -18,7 +18,7 @@
 #import "TILoginViewController.h"
 #import "TIUser.h"
 #import "TIInstagramPostsPaginationInfo.h"
-#import "TIPresentationConstants.h"
+#import "TIServicesConstants.h"
 
 @implementation TIInstagramManager
 
@@ -41,15 +41,14 @@
     
     TIInstagramRequest *request = [TIInstagramRequestFactory instagramRequestWithTag:tag paginationInfo:paginationInfo];
     
-    void (^completionBlock1)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {
+    void (^requestCompletionBlock)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {
         TIInstagramPostsPaginationInfo *paginationInfoResult = [TIInstagramMapingManager mapPaginationInfoFromJSONDictionary:results[TIInstagramPaginationKey]];
         [TIInstagramMapingManager mapPostsFromJSONArray:results[TIInstagramDataKey] withRequestedTag:tag];
 
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         completionBlock(paginationInfoResult, nil);
-        
     };
-    [request fetchRequestWithComplitionBlock:completionBlock1];
+    [request fetchRequestWithComplitionBlock:requestCompletionBlock];
 }
 
 @end
