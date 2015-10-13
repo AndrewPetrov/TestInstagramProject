@@ -10,10 +10,8 @@
 #import "TITaggedPostsDataSource.h"
 @class TITaggedPostsCollectionViewDataSource;
 
-@interface TICollectionViewController : UICollectionViewController<TITaggedPostsDataSourceProtocol>
+@interface TICollectionViewController : UICollectionViewController
 
 @property (nonatomic, strong) TITaggedPostsCollectionViewDataSource *allPosts;
-
-- (void)dataSourceIsUpdated;
 
 @end

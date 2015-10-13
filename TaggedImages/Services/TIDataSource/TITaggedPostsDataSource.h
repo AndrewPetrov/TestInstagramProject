@@ -10,23 +10,15 @@
 #import <CoreData/CoreData.h>
 @class TIInstagramPost;
 @class TIInstagramPostsPaginationInfo;
-@protocol TITaggedPostsDataSourceProtocol;
 
 @interface TITaggedPostsDataSource : NSObject <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSString *tag;
 @property (nonatomic, strong) TIInstagramPostsPaginationInfo *postsPaginationInfo;
-@property (nonatomic, weak) id<TITaggedPostsDataSourceProtocol> delegate;
 
 - (NSInteger)postCount;
 - (TIInstagramPost *)postAtIndex:(NSInteger)index;
 - (NSArray *)instagramPosts;
 - (void)requestRecentPost;
-
-@end
-
-@protocol TITaggedPostsDataSourceProtocol
-
-- (void)dataSourceIsUpdated;
 
 @end

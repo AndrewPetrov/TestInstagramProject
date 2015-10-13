@@ -33,12 +33,12 @@
     
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:TITableViewControllerIdentifier];
     self.tableVC.allPosts = [TITaggedPostsTableViewDataSource initWithTag:self.tag tableView:self.tableVC.tableView];
-    self.tableVC.allPosts.delegate = self.tableVC;
+    
     
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
     self.collectionVC.allPosts = [TITaggedPostsCollectionViewDataSource initWithTag:self.tag collectionView:self.collectionVC.collectionView];
-    self.collectionVC.allPosts.delegate = self.tableVC;
+    
 
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = self.tag;

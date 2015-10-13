@@ -46,7 +46,6 @@
 - (void)requestRecentPost {
     TICompletionBlock completionBlock = ^(TIInstagramPostsPaginationInfo* info, NSError *error) {
         self.postsPaginationInfo = info;
-        [self.delegate dataSourceIsUpdated];
     };
     [TIInstagramManager requestRecentPostWithTag:self.tag
                                   paginationInfo:self.postsPaginationInfo
