@@ -7,9 +7,9 @@
 В UIImageView отображается собственно фото из поста в оригинальном размере, текст находится внутри объекта “пост” по ключу “caption.text”
 Ручное добавление постов можно удалять, удаление постов - на Ваше усмотрение
 
-###Project Structure sketch (reciving posts)
+###Project Structure sketch (reciving posts from Instagram)
 
-![alt tag](https://raw.githubusercontent.com/YAInternship2015/AndrewPetrovTask1/master/Task2ClassesDiagram.png)
+![alt tag](https://raw.githubusercontent.com/YAInternship2015/TaggedImages/master/Task4ClassesDiagram.png)
 
 
 ## Task #3
