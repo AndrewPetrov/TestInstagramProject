@@ -17,7 +17,7 @@ static NSString * const TITagViewControllerIdentifier = @"TITagViewControllerIde
 static NSString * const TIContainerControllerIdentifier = @"TIContainerControllerIdentifier";
 
 static NSInteger const TITaggedPostsPageSize = 25;
-static NSInteger const TIPostsCountLoadingHandicap = 2;
+static NSInteger const TIPostsCountLoadingHandicap = 1;
 
 static NSString * const TIInstagramAuthorizationRequestString =
 @"https://api.instagram.com/oauth/authorize/?client_id=482b2956910b48ef9f33157622977803&redirect_uri=%@&response_type=token";

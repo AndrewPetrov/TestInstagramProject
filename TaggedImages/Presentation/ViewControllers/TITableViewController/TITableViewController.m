@@ -49,7 +49,7 @@
 #pragma mark - TITaggedPostsDataSourceProtoco
 
 - (void)dataSourceIsUpdated {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.allPosts.postCount - TIPostsCountLoadingHandicap - 1) inSection:0];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.allPosts.postCount - TITaggedPostsPageSize) inSection:0];
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom  animated:YES];
 }
 
