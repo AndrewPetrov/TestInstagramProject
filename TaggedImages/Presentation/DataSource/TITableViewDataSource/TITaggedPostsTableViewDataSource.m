@@ -9,11 +9,10 @@
 #import "TITaggedPostsTableViewDataSource.h"
 #import "TITableViewCell.h"
 #import "TIInstagramPost.h"
-
-@interface TITaggedPostsTableViewDataSource ()
-
-
-@end
+//
+//@interface TITaggedPostsTableViewDataSource ()
+//
+//@end
 
 @implementation TITaggedPostsTableViewDataSource
 

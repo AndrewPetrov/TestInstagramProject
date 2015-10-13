@@ -29,8 +29,6 @@
     TIInstagramPostsPaginationInfo *postsPaginationInfo =
         [FEMDeserializer objectFromRepresentation:jsonDictionary
                                           mapping:mapping];
-        
-    NSLog(@"postsPaginationInfo ================== \n\n%@\n\postsPaginationInfo ==================", postsPaginationInfo);
     return postsPaginationInfo;
 }
 

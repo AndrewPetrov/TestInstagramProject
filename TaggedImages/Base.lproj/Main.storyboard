@@ -52,7 +52,7 @@
                                                 <constraint firstAttribute="height" constant="92" id="lXz-HD-65U"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gms-6C-YBS">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gms-6C-YBS">
                                             <rect key="frame" x="110" y="13" width="464" height="92"/>
                                             <animations/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -119,7 +119,7 @@
                                     <action selector="sarchAction:" destination="KfI-iJ-lNl" eventType="touchUpInside" id="lNn-No-3QU"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tag" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-h6-QPx">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter tag" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-h6-QPx">
                                 <rect key="frame" x="260" y="200" width="80" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -211,19 +211,12 @@
                         <connections>
                             <outlet property="dataSource" destination="rpx-mC-NlX" id="aW4-y2-eD9"/>
                             <outlet property="delegate" destination="rpx-mC-NlX" id="mqE-gc-eNk"/>
-                            <outletCollection property="gestureRecognizers" destination="fgC-PR-otb" appends="YES" id="6xC-19-fzH"/>
                         </connections>
                     </collectionView>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="z5A-l5-zW4"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1u-of-HYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer delaysTouchesBegan="YES" allowableMovement="10" minimumPressDuration="0.5" id="fgC-PR-otb">
-                    <connections>
-                        <action selector="handleLongPress:" destination="rpx-mC-NlX" id="e4h-X1-E3W"/>
-                        <outlet property="delegate" destination="rpx-mC-NlX" id="LwY-Cc-1gL"/>
-                    </connections>
-                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-2084" y="1583"/>
         </scene>

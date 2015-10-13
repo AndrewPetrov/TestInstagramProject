@@ -18,17 +18,18 @@
 #import "TILoginViewController.h"
 #import "TIUser.h"
 #import "TIInstagramPostsPaginationInfo.h"
+#import "TIPresentationConstants.h"
 
 @implementation TIInstagramManager
 
 + (NSURLRequest *)userAuthorizationRequest {
-    NSString *uriString = [NSString stringWithFormat:@"https://api.instagram.com/oauth/authorize/?client_id=482b2956910b48ef9f33157622977803&redirect_uri=%@&response_type=token", redirect_uri];
+    NSString *uriString = [NSString stringWithFormat:TIInstagramAuthorizationRequestString, TITaggedimageRedirectString];
     return [NSURLRequest requestWithURL:[NSURL URLWithString:uriString]];
 }
 
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request {
     NSArray *urlParams = [request.URL.fragment componentsSeparatedByString:@"="];
-    NSString *token = urlParams[[urlParams indexOfObject:@"access_token"] + 1];
+    NSString *token = urlParams[[urlParams indexOfObject:TIInstagramTokenKey] + 1];
     TIUser *user = [TIUser MR_createEntity];
     user.token = token;
     [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
@@ -41,11 +42,12 @@
     TIInstagramRequest *request = [TIInstagramRequestFactory instagramRequestWithTag:tag paginationInfo:paginationInfo];
     
     void (^completionBlock1)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {
-        TIInstagramPostsPaginationInfo *paginationInfoResult = [TIInstagramMapingManager mapPaginationInfoFromJSONDictionary:results[@"pagination"]];
-        completionBlock(paginationInfoResult, nil);
-        [TIInstagramMapingManager mapPostsFromJSONArray:results[@"data"] withRequestedTag:tag];
+        TIInstagramPostsPaginationInfo *paginationInfoResult = [TIInstagramMapingManager mapPaginationInfoFromJSONDictionary:results[TIInstagramPaginationKey]];
+        [TIInstagramMapingManager mapPostsFromJSONArray:results[TIInstagramDataKey] withRequestedTag:tag];
 
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
+        completionBlock(paginationInfoResult, nil);
+        
     };
     [request fetchRequestWithComplitionBlock:completionBlock1];
 }

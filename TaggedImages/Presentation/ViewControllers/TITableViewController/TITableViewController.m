@@ -17,12 +17,13 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.allPosts requestRecentPost];
+    if (self.allPosts.postCount < TITaggedPostsPageSize) {
+        [self.allPosts requestRecentPost];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -40,10 +41,16 @@
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.allPosts.postCount - PostsCountLoadingHandicap) {
+    if (indexPath.row == self.allPosts.postCount - TIPostsCountLoadingHandicap) {
         [self.allPosts requestRecentPost];
     }
 }
 
-@end
+#pragma mark - TITaggedPostsDataSourceProtoco
 
+- (void)dataSourceIsUpdated {
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:(self.allPosts.postCount - TIPostsCountLoadingHandicap - 1) inSection:0];
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom  animated:YES];
+}
+
+@end

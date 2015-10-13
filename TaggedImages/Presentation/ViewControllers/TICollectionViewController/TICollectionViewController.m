@@ -18,21 +18,6 @@
     self.navigationController.navigationBar.translucent = NO;
 }
 
-- (IBAction)handleLongPress:(UILongPressGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer.state != UIGestureRecognizerStateEnded) {
-        return;
-    }
-    CGPoint p = [gestureRecognizer locationInView:self.collectionView];
-    
-    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:p];
-    if (indexPath == nil){
-        NSLog(@"couldn't find index path");
-    }
-    else {
-        //TODO: delete id from FRC
-    }
-}
-
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -49,7 +34,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.allPosts.postCount - PostsCountLoadingHandicap) {
+    if (indexPath.row == self.allPosts.postCount - TIPostsCountLoadingHandicap) {
         [self.allPosts requestRecentPost];
     }
 }

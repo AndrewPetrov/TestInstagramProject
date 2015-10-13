@@ -18,9 +18,9 @@
 
 @implementation TIInstagramRequest
 
-+ (TIInstagramRequest *)initWithString:(NSString *)string {
++ (TIInstagramRequest *)initWithUrl:(NSString *)url {
     TIInstagramRequest *request = [[TIInstagramRequest alloc] init];
-    request.requestString = string;
+    request.requestString = url;
     return request;
 }
 

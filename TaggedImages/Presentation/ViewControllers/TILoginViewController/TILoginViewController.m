@@ -12,8 +12,6 @@
 #import "TIContainerController.h"
 #import "TIPresentationConstants.h"
 
-const NSString* redirect_uri = @"taggedimage://redirect.com";
-
 @interface TILoginViewController () <UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *loginWebView;
@@ -32,14 +30,13 @@ const NSString* redirect_uri = @"taggedimage://redirect.com";
     [self.loginWebView loadRequest:request];
     
     [self.view addSubview:self.loginWebView];
-    
 }
 
 #pragma mark - UIWebViewDelegate
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
     //    [indicator startAnimating];
-    NSString *redirect_uri_domain = [[redirect_uri componentsSeparatedByString:@"//"] lastObject];
+    NSString *redirect_uri_domain = [[TITaggedimageRedirectString componentsSeparatedByString:@"//"] lastObject];
     if ([request.URL.host isEqualToString:(NSString *)redirect_uri_domain]) {
         [TIInstagramManager saveTokenFromRedirectUriRequest:request];
         
@@ -47,9 +44,7 @@ const NSString* redirect_uri = @"taggedimage://redirect.com";
         TITagViewController *tagViewController  = [storyboard instantiateViewControllerWithIdentifier:TITagViewControllerIdentifier];
         [self.navigationController pushViewController:tagViewController animated:YES];
     }
-    
     return YES;
 }
-
 
 @end

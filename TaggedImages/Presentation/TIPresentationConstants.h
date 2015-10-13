@@ -16,12 +16,17 @@ static NSString * const TICollectionViewControllerIdentifier = @"TICollectionVie
 static NSString * const TITagViewControllerIdentifier = @"TITagViewControllerIdentifier";
 static NSString * const TIContainerControllerIdentifier = @"TIContainerControllerIdentifier";
 
-static NSInteger const CollectionViewFirstLoadPostsCount = 25;
-static NSInteger const PostsCountLoadingHandicap = 5;
+static NSInteger const TITaggedPostsPageSize = 25;
+static NSInteger const TIPostsCountLoadingHandicap = 2;
 
-//static NSString * const TIInstagramRequestFirstStringPart = @"";
+static NSString * const TIInstagramAuthorizationRequestString =
+@"https://api.instagram.com/oauth/authorize/?client_id=482b2956910b48ef9f33157622977803&redirect_uri=%@&response_type=token";
+static NSString * const TIInstagramPostsRequestString =
+@"https://api.instagram.com/v1/tags/%@/media/recent?access_token=%@&count=%ld";
+static NSString * const TITaggedimageRedirectString = @"taggedimage://redirect.com";
+
+static NSString * const TIInstagramTokenKey = @"access_token";
+static NSString * const TIInstagramPaginationKey = @"pagination";
+static NSString * const TIInstagramDataKey = @"data";
 
 #endif /* TIPresentationConstants_h */
-
-
-

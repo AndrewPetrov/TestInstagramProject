@@ -23,11 +23,9 @@
     } else {
         NSString *tokenString = [TIUser MR_findFirst].token;
         requestString =
-        [NSString stringWithFormat:@"https://api.instagram.com/v1/tags/%@/media/recent?access_token=%@&count=%ld", tag, tokenString, CollectionViewFirstLoadPostsCount];
+        [NSString stringWithFormat:TIInstagramPostsRequestString, tag, tokenString, TITaggedPostsPageSize];
     }
-    return [TIInstagramRequest initWithString:requestString];
-    //TODO:  Think about what if we have several users
-    //    NSString *tokenString = [TIUser MR_findFirst].token;
+    return [TIInstagramRequest initWithUrl:requestString];
 }
 
 @end

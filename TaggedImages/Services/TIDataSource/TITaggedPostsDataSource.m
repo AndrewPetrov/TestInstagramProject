@@ -29,9 +29,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
     return [self.fetchedResultsController objectAtIndexPath:indexPath];
 }
-- (NSInteger)tagsCount {
-    return 0;
-}
+
 - (NSArray *)instagramPosts {
     return [self.fetchedResultsController fetchedObjects];
 }
@@ -48,6 +46,7 @@
 - (void)requestRecentPost {
     TICompletionBlock completionBlock = ^(TIInstagramPostsPaginationInfo* info, NSError *error) {
         self.postsPaginationInfo = info;
+        [self.delegate dataSourceIsUpdated];
     };
     [TIInstagramManager requestRecentPostWithTag:self.tag
                                   paginationInfo:self.postsPaginationInfo
