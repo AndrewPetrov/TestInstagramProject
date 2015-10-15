@@ -38,7 +38,7 @@
         [TIInstagramManager saveTokenFromRedirectUriRequest:request];
         
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        TITagViewController *tagViewController  = [storyboard instantiateViewControllerWithIdentifier:TITagViewControllerIdentifier];
+        TITagViewController *tagViewController = [storyboard instantiateViewControllerWithIdentifier:TITagViewControllerIdentifier];
         [self.navigationController pushViewController:tagViewController animated:YES];
     }
     return YES;

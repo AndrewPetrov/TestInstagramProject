@@ -20,11 +20,12 @@
 }
 
 + (NSURLRequest *)instagramRecentPostsRequestWithTag:(NSString *)tag
-                                 paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo {
+                                      paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo {
     NSString *requestString;
     if (paginationInfo) {
         requestString = paginationInfo.nextUrl;
-    } else {
+    }
+    else {
         NSString *tokenString = [TIUser MR_findFirst].token;
         requestString =
         [NSString stringWithFormat:TIInstagramPostsRequestString, tag, tokenString, TITaggedPostsPageSize];

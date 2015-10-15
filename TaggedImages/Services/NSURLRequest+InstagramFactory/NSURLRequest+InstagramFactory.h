@@ -15,6 +15,6 @@
 + (NSURLRequest *)instagramUserAuthorizationRequest;
 
 + (NSURLRequest *)instagramRecentPostsRequestWithTag:(NSString *)tag
-                           paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo;
+                                      paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo;
 
 @end
