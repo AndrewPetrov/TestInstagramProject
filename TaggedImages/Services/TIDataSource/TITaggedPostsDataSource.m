@@ -47,10 +47,7 @@
         self.postsPaginationInfo = info;
     };
     void(^failureBlock)(NSError *) = ^(NSError* error) {
-        UIAlertController *alertController =
-        [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Error %ld", error.code]
-                                            message:[NSString stringWithFormat:@"%@", error.userInfo]
-                                     preferredStyle:UIAlertControllerStyleActionSheet];
+        NSLog(@"%@", error.userInfo);
     };
     [TIInstagramManager requestRecentPostWithTag:self.tag
                                   paginationInfo:self.postsPaginationInfo
