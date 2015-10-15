@@ -8,7 +8,6 @@
 
 #import "NSFetchedResultsController+Factory.h"
 #import "TIInstagramPost.h"
-
 #import <MagicalRecord.h>
 
 @implementation NSFetchedResultsController (Factory)
