@@ -14,8 +14,8 @@
 
 + (void)fetchInstagramRecentPostsRequestWithTag:(NSString *)tag
                                  paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
-                                complitionBlock:(void(^)(NSDictionary* results, NSError *error))completionBlock
-                                   failureBlock:(void(^)(NSDictionary* results, NSError *error))failureBlock {
+                                        success:(void(^)(NSDictionary* results))successBlock
+                                        failure:(void(^)(NSError *error))failureBlock {
     NSURLRequest *request = [NSURLRequest instagramRecentPostsRequestWithTag:tag
                                                               paginationInfo:paginationInfo];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -23,18 +23,17 @@
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success");
-        if (completionBlock) {
-            completionBlock((NSDictionary *)responseObject, nil);
+        if (successBlock) {
+            successBlock((NSDictionary *)responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"failure");
         if (failureBlock) {
-            failureBlock (nil, error);
+            failureBlock (error);
         }
     }];
     [operation start];
 }
-
 
 + (NSURLRequest *)instagramUserAuthorizationRequest {
     return [NSURLRequest instagramUserAuthorizationRequest];

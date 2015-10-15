@@ -43,12 +43,19 @@
 }
 
 - (void)requestRecentPost {
-    TICompletionBlock completionBlock = ^(TIInstagramPostsPaginationInfo* info, NSError *error) {
+    void(^successBlock)(TIInstagramPostsPaginationInfo *) = ^(TIInstagramPostsPaginationInfo* info) {
         self.postsPaginationInfo = info;
+    };
+    void(^failureBlock)(NSError *) = ^(NSError* error) {
+        UIAlertController *alertController =
+        [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"Error %ld", error.code]
+                                            message:[NSString stringWithFormat:@"%@", error.userInfo]
+                                     preferredStyle:UIAlertControllerStyleActionSheet];
     };
     [TIInstagramManager requestRecentPostWithTag:self.tag
                                   paginationInfo:self.postsPaginationInfo
-                                 complitionBlock:completionBlock];
+                                         success:successBlock
+                                         failure:failureBlock];
 }
 
 @end

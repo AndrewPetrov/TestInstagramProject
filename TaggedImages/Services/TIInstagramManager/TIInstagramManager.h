@@ -12,14 +12,13 @@
 @class NSError;
 @class TIInstagramPostsPaginationInfo;
 
-typedef void(^TICompletionBlock)(TIInstagramPostsPaginationInfo *paginationInfo, NSError *error);
-
 @interface TIInstagramManager : NSObject
 
 + (NSURLRequest *)userAuthorizationRequest;
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request;
 + (void)requestRecentPostWithTag:(NSString *)tag
                   paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
-                 complitionBlock:(TICompletionBlock) completionBlock;
+                         success:(void(^)(TIInstagramPostsPaginationInfo *paginationInfo)) successBlock
+                         failure:(void(^)(NSError *error)) failureBlock;
 
 @end

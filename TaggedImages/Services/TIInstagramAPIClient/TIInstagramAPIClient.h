@@ -16,7 +16,7 @@
 
 + (void)fetchInstagramRecentPostsRequestWithTag:(NSString *)tag
                                  paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
-                                complitionBlock:(void(^)(NSDictionary* results, NSError *error))completionBlock
-                                   failureBlock:(void(^)(NSDictionary* results, NSError *error))failureBlock;
+                                        success:(void(^)(NSDictionary* results))successBlock
+                                        failure:(void(^)(NSError *error))failureBlock;
 
 @end

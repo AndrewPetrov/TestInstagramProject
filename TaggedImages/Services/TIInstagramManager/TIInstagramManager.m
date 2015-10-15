@@ -31,21 +31,21 @@
 
 + (void)requestRecentPostWithTag:(NSString *)tag
                   paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
-                 complitionBlock:(TICompletionBlock) completionBlock {
+                         success:(void(^)(TIInstagramPostsPaginationInfo *paginationInfo)) successBlock
+                         failure:(void(^)(NSError *error)) failureBlock {
     
     //#warning в принципе подход с оберткой вокруг AFHTTPRequestOperation (TIInstagramRequest) имеет право существовать. Обычно вмето связки фабрика -> обертка создается класс APIClient, у которого есть метод, скажем, "загрузить посты с такими-то параметрами, successBlock'ом и failureBlock'ом", внутри метода создается операция, которой подставляются это блоки. Так уровень API остается спрятаным от менеджеров
     
-    void (^requestCompletionBlock)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {
+    void (^requestSuccessBlock)(NSDictionary *) = ^(NSDictionary *results) {
         TIInstagramPostsPaginationInfo *paginationInfoResult = [TIInstagramMapingManager mapPaginationInfoFromJSONDictionary:results[TIInstagramPaginationKey]];
         [TIInstagramMapingManager mapPostsFromJSONArray:results[TIInstagramDataKey] withRequestedTag:tag];
-        
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
-        completionBlock(paginationInfoResult, nil);
+        successBlock(paginationInfoResult);
     };
     [TIInstagramAPIClient fetchInstagramRecentPostsRequestWithTag:tag
                                                    paginationInfo:paginationInfo
-                                                  complitionBlock:requestCompletionBlock
-                                                     failureBlock:nil];
+                                                          success:requestSuccessBlock
+                                                          failure:failureBlock];
 }
 
 @end
