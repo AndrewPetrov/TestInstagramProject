@@ -13,6 +13,7 @@
 
 @interface TITaggedPostsCollectionViewDataSource : TITaggedPostsDataSource
 
+#warning методы init всегда с "-", с "+" создаются так называемые фабричные методы, их имя должно быть в стиле taggedPostsCollectionViewDataSourceWith...
 + (TITaggedPostsCollectionViewDataSource *)initWithTag:(NSString *)tag collectionView:(UICollectionView *)collectionView;
 
 @end

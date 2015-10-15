@@ -6,6 +6,7 @@
 //
 //
 
+#warning здесь достаточно много лишних импортов. Удалите лишние
 #import "TIInstagramManager.h"
 #import <FastEasyMapping.h>
 #import "TIInstagramPost.h"
@@ -39,6 +40,7 @@
                   paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
                  complitionBlock:(TICompletionBlock) completionBlock {
     
+#warning в принципе подход с оберткой вокруг AFHTTPRequestOperation (TIInstagramRequest) имеет право существовать. Обычно вмето связки фабрика -> обертка создается класс APIClient, у которого есть метод, скажем, "загрузить посты с такими-то параметрами, successBlock'ом и failureBlock'ом", внутри метода создается операция, которой подставляются это блоки. Так уровень API остается спрятаным от менеджеров
     TIInstagramRequest *request = [TIInstagramRequestFactory instagramRequestWithTag:tag paginationInfo:paginationInfo];
     
     void (^requestCompletionBlock)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {

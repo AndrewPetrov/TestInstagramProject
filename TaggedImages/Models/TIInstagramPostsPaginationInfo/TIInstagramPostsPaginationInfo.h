@@ -10,6 +10,7 @@
 
 @interface TIInstagramPostsPaginationInfo : NSObject
 
+#warning в именах свойств надо использовать Camel Case
 @property (nonatomic, strong) NSString *next_max_tag_id;
 @property (nonatomic, strong) NSString *min_tag_id;
 @property (nonatomic, strong) NSString *next_url;

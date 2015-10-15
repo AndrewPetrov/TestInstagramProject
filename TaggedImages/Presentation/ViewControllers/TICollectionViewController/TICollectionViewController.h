@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#warning зачем здесь этот импорт?
 #import "TITaggedPostsDataSource.h"
 
 @class TITaggedPostsCollectionViewDataSource;
 
 @interface TICollectionViewController : UICollectionViewController
 
+#warning плохое имя для датасорса
 @property (nonatomic, strong) TITaggedPostsCollectionViewDataSource *allPosts;
 
 @end

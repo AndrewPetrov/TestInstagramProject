@@ -13,6 +13,7 @@
 
 @property (nonatomic, strong) NSMutableArray *sectionChanges;
 @property (nonatomic, strong) NSMutableArray *itemChanges;
+#warning collectionView здесь должна быть weak, так как ей "владеет" view у вьюконтроллера
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end

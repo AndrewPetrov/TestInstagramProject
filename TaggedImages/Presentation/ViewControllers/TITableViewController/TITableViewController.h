@@ -12,6 +12,7 @@
 
 @interface TITableViewController : UITableViewController
 
+#warning плохое имя для датасорса
 @property (nonatomic, strong) TITaggedPostsTableViewDataSource *allPosts;
 
 @end

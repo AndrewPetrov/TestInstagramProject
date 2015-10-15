@@ -18,6 +18,7 @@
 
 @implementation TITagViewController
 
+#warning опечатка в имени
 - (IBAction)sarchAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TIContainerController *containerController = [storyboard instantiateViewControllerWithIdentifier:TIContainerControllerIdentifier];

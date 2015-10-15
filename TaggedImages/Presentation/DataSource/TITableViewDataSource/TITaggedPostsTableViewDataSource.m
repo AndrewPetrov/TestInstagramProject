@@ -12,6 +12,7 @@
 
 @interface TITaggedPostsTableViewDataSource ()
 
+#warning tableView здесь должна быть weak, так как ей "владеет" view у вьюконтроллера
 @property (nonatomic, strong) UITableView *tableView;
 
 @end

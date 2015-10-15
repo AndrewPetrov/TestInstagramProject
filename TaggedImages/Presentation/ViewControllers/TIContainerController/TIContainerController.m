@@ -41,6 +41,7 @@
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = [NSString stringWithFormat:@"#%@",self.tag];
     self.transitionInProgress = NO;
+#warning ContainerTargetHeight - это что такое?
     float ContainerTargetHeight = self.navigationController.navigationBar.frame.size.height;
     NSLog(@"ContainerTargetHeight ==== %f", ContainerTargetHeight);
         NSLog(@"ContainerViewController ==== %@", self);
@@ -58,6 +59,7 @@
     newVC.view.frame = self.view.bounds;
     [oldVC willMoveToParentViewController:nil];
     [self addChildViewController:newVC];
+#warning длительность анимации должна быть в константах
     [self transitionFromViewController:oldVC
                       toViewController:newVC
                               duration:0.5

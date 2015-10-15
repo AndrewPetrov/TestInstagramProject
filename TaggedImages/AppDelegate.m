@@ -17,6 +17,7 @@
     return YES;
 }
 
+#warning этот метод должен быть в категории NSFileManager
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }

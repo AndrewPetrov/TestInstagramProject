@@ -35,6 +35,7 @@
                                 }];
     [mapping addAttribute:attribute];
     
+#warning не совсем понял плясок вокруг параметра tag
     FEMAttribute *tagAttribute =
     [[FEMAttribute alloc] initWithProperty:@"tag"
                                    keyPath:@"tags"

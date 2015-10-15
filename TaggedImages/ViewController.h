@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#warning зачем нужен этот вью контроллер?
+
 @interface ViewController : UIViewController
 
 
