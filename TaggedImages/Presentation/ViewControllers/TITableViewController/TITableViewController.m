@@ -23,28 +23,28 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    if (self.allPosts.postCount < TITaggedPostsPageSize) {
-        [self.allPosts requestRecentPost];
+    if (self.taggedPostsDataSource.postCount < TITaggedPostsPageSize) {
+        [self.taggedPostsDataSource requestRecentPost];
     }
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.allPosts postCount];
+    return [self.taggedPostsDataSource postCount];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     TITableViewCell *cell =
     [tableView dequeueReusableCellWithIdentifier:TITableViewCellIdentifier
                                     forIndexPath:indexPath];
-    [cell setPost:[self.allPosts postAtIndex:indexPath.row]];
+    [cell setPost:[self.taggedPostsDataSource postAtIndex:indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.allPosts.postCount - TIPostsCountLoadingHandicap) {
-        [self.allPosts requestRecentPost];
+    if (indexPath.row == self.taggedPostsDataSource.postCount - TIPostsCountLoadingHandicap) {
+        [self.taggedPostsDataSource requestRecentPost];
     }
 }
 

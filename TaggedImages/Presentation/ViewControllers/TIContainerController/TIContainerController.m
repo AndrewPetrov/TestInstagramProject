@@ -31,20 +31,18 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:TITableViewControllerIdentifier];
-    self.tableVC.allPosts = [TITaggedPostsTableViewDataSource initWithTag:self.tag tableView:self.tableVC.tableView];
+    self.tableVC.taggedPostsDataSource = [[TITaggedPostsTableViewDataSource alloc] initWithTag:self.tag
+                                                                                     tableView:self.tableVC.tableView];
     
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
-    self.collectionVC.allPosts = [TITaggedPostsCollectionViewDataSource initWithTag:self.tag
-                                                                     collectionView:self.collectionVC.collectionView];
+    self.collectionVC.taggedPostsDataSource =
+    [[TITaggedPostsCollectionViewDataSource alloc] initWithTag:self.tag
+                                                collectionView:self.collectionVC.collectionView];
     
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = [NSString stringWithFormat:@"#%@",self.tag];
     self.transitionInProgress = NO;
-#warning ContainerTargetHeight - это что такое?
-    float ContainerTargetHeight = self.navigationController.navigationBar.frame.size.height;
-    NSLog(@"ContainerTargetHeight ==== %f", ContainerTargetHeight);
-        NSLog(@"ContainerViewController ==== %@", self);
     [self displayContentController:self.tableVC];
 }
 
@@ -59,10 +57,10 @@
     newVC.view.frame = self.view.bounds;
     [oldVC willMoveToParentViewController:nil];
     [self addChildViewController:newVC];
-#warning длительность анимации должна быть в константах
+//#warning длительность анимации должна быть в константах
     [self transitionFromViewController:oldVC
                       toViewController:newVC
-                              duration:0.5
+                              duration:TITransitionDuration
                                options:UIViewAnimationOptionTransitionFlipFromLeft
                             animations:nil
                             completion:^(BOOL finished) {
@@ -88,11 +86,11 @@
     self.transitionInProgress = YES;
     UIViewController *oldVC = [self.childViewControllers lastObject];
     if ([oldVC isEqual:self.tableVC]) {
-        self.collectionVC.allPosts.postsPaginationInfo = self.tableVC.allPosts.postsPaginationInfo;
+        self.collectionVC.taggedPostsDataSource.postsPaginationInfo = self.tableVC.taggedPostsDataSource.postsPaginationInfo;
         [self swapViewController:oldVC toViewController:self.collectionVC];
     }
     else {
-        self.tableVC.allPosts.postsPaginationInfo = self.collectionVC.allPosts.postsPaginationInfo;
+        self.tableVC.taggedPostsDataSource.postsPaginationInfo = self.collectionVC.taggedPostsDataSource.postsPaginationInfo;
         [self swapViewController:oldVC toViewController:self.tableVC];
     }
     [self updateTogglePresentationButtonItemPicture];

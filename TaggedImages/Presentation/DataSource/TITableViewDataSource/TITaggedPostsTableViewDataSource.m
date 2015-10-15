@@ -12,18 +12,17 @@
 
 @interface TITaggedPostsTableViewDataSource ()
 
-#warning tableView здесь должна быть weak, так как ей "владеет" view у вьюконтроллера
-@property (nonatomic, strong) UITableView *tableView;
+//#warning tableView здесь должна быть weak, так как ей "владеет" view у вьюконтроллера
+@property (nonatomic, weak) UITableView *tableView;
 
 @end
 
 @implementation TITaggedPostsTableViewDataSource
 
-+ (TITaggedPostsTableViewDataSource *)initWithTag:(NSString *)tag tableView:(UITableView *)tableView {
-    TITaggedPostsTableViewDataSource *allPosts = [[TITaggedPostsTableViewDataSource alloc] init];
-    allPosts.tag = tag;
-    allPosts.tableView = tableView;
-    return allPosts;
+- (TITaggedPostsTableViewDataSource *)initWithTag:(NSString *)tag tableView:(UITableView *)tableView {
+    self.tag = tag;
+    self.tableView = tableView;
+    return self;
 }
 
 - (void)configureCell:(TITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {

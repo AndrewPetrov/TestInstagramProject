@@ -22,7 +22,7 @@
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.allPosts postCount];
+    return [self.taggedPostsDataSource postCount];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
@@ -30,13 +30,13 @@
     TICollectionViewCell *cell =
     [collectionView dequeueReusableCellWithReuseIdentifier:TICollectionViewCellIdentifier
                                               forIndexPath:indexPath];
-    [cell setPost:[self.allPosts postAtIndex:indexPath.row]];
+    [cell setPost:[self.taggedPostsDataSource postAtIndex:indexPath.row]];
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.allPosts.postCount - TIPostsCountLoadingHandicap) {
-        [self.allPosts requestRecentPost];
+    if (indexPath.row == self.taggedPostsDataSource.postCount - TIPostsCountLoadingHandicap) {
+        [self.taggedPostsDataSource requestRecentPost];
     }
 }
 

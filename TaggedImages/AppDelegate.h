@@ -12,7 +12,5 @@
 
 @property (nonatomic, strong) UIWindow *window;
 
-- (NSURL *)applicationDocumentsDirectory;
-
 @end
 

@@ -6,26 +6,19 @@
 //
 //
 
-#warning здесь достаточно много лишних импортов. Удалите лишние
+//#warning здесь достаточно много лишних импортов. Удалите лишние
 #import "TIInstagramManager.h"
-#import <FastEasyMapping.h>
-#import "TIInstagramPost.h"
-#import "TIInstagramPost+Mapping.h"
 #import <MagicalRecord.h>
 #import "TIInstagramMapingManager.h"
-#import "TIInstagramRequest.h"
-#import "TIInstagramRequestFactory.h"
-#import <AFNetworking.h>
-#import "TILoginViewController.h"
 #import "TIUser.h"
 #import "TIInstagramPostsPaginationInfo.h"
 #import "TIServicesConstants.h"
+#import "TIInstagramAPIClient.h"
 
 @implementation TIInstagramManager
 
 + (NSURLRequest *)userAuthorizationRequest {
-    NSString *uriString = [NSString stringWithFormat:TIInstagramAuthorizationRequestString, TITaggedimageRedirectString];
-    return [NSURLRequest requestWithURL:[NSURL URLWithString:uriString]];
+      return [TIInstagramAPIClient instagramUserAuthorizationRequest];
 }
 
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request {
@@ -40,9 +33,8 @@
                   paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
                  complitionBlock:(TICompletionBlock) completionBlock {
     
-#warning в принципе подход с оберткой вокруг AFHTTPRequestOperation (TIInstagramRequest) имеет право существовать. Обычно вмето связки фабрика -> обертка создается класс APIClient, у которого есть метод, скажем, "загрузить посты с такими-то параметрами, successBlock'ом и failureBlock'ом", внутри метода создается операция, которой подставляются это блоки. Так уровень API остается спрятаным от менеджеров
-    TIInstagramRequest *request = [TIInstagramRequestFactory instagramRequestWithTag:tag paginationInfo:paginationInfo];
-    
+//#warning в принципе подход с оберткой вокруг AFHTTPRequestOperation (TIInstagramRequest) имеет право существовать. Обычно вмето связки фабрика -> обертка создается класс APIClient, у которого есть метод, скажем, "загрузить посты с такими-то параметрами, successBlock'ом и failureBlock'ом", внутри метода создается операция, которой подставляются это блоки. Так уровень API остается спрятаным от менеджеров
+
     void (^requestCompletionBlock)(NSDictionary *, NSError *) = ^(NSDictionary *results, NSError *error) {
         TIInstagramPostsPaginationInfo *paginationInfoResult = [TIInstagramMapingManager mapPaginationInfoFromJSONDictionary:results[TIInstagramPaginationKey]];
         [TIInstagramMapingManager mapPostsFromJSONArray:results[TIInstagramDataKey] withRequestedTag:tag];
@@ -50,7 +42,10 @@
         [[NSManagedObjectContext MR_defaultContext] MR_saveToPersistentStoreAndWait];
         completionBlock(paginationInfoResult, nil);
     };
-    [request fetchRequestWithComplitionBlock:requestCompletionBlock];
+    [TIInstagramAPIClient fetchInstagramRecentPostsRequestWithTag:tag
+                                                   paginationInfo:paginationInfo
+                                                  complitionBlock:requestCompletionBlock
+                                                     failureBlock:nil];
 }
 
 @end

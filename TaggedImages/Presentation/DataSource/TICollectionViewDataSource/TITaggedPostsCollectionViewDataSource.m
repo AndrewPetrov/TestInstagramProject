@@ -20,11 +20,10 @@
 
 @implementation TITaggedPostsCollectionViewDataSource
 
-+ (TITaggedPostsCollectionViewDataSource *)initWithTag:(NSString *)tag collectionView:(UICollectionView *)collectionView {
-    TITaggedPostsCollectionViewDataSource *allPosts = [[TITaggedPostsCollectionViewDataSource alloc] init];
-    allPosts.tag = tag;
-    allPosts.collectionView = collectionView;
-    return allPosts;
+- (TITaggedPostsCollectionViewDataSource *)initWithTag:(NSString *)tag collectionView:(UICollectionView *)collectionView {
+    self.tag = tag;
+    self.collectionView = collectionView;
+    return self;
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

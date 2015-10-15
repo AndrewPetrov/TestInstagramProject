@@ -13,7 +13,10 @@
 
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithObjectClass:[TIInstagramPostsPaginationInfo class]];
-    [mapping addAttributesFromArray:@[@"next_max_tag_id", @"min_tag_id", @"next_url"]];
+    
+    [mapping addAttributesFromDictionary:@{@"nextMaxTagId": @"next_max_tag_id"}];
+    [mapping addAttributesFromDictionary:@{@"minTagId": @"min_tag_id"}];
+    [mapping addAttributesFromDictionary:@{@"nextUrl": @"next_url"}];
     return mapping;
 }
 

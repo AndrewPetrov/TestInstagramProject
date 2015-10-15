@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-#warning зачем нужна эта константа?
-extern const NSString* redirect_uri;
+//#warning зачем нужна эта константа?
 
-#warning <UIWebViewDelegate> можно в *.h не указывать
-@interface TILoginViewController : UIViewController<UIWebViewDelegate>
+//#warning <UIWebViewDelegate> можно в *.h не указывать
+@interface TILoginViewController : UIViewController
 
 @end

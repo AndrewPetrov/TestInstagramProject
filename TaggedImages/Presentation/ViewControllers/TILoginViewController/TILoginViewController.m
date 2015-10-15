@@ -15,7 +15,7 @@
 
 @interface TILoginViewController () <UIWebViewDelegate>
 
-@property (nonatomic, strong) UIWebView *loginWebView;
+@property (weak, nonatomic) IBOutlet UIWebView *loginWebView;
 
 @end
 
@@ -23,11 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-#warning webView лучше было в сториборде создать
-    self.loginWebView = [[UIWebView alloc] initWithFrame:self.view.bounds];
-    [self.loginWebView setAutoresizingMask:UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth];
-    self.loginWebView.delegate = self;
+//#warning webView лучше было в сториборде создать
     NSURLRequest *request = [TIInstagramManager userAuthorizationRequest];
     [self.loginWebView loadRequest:request];
     

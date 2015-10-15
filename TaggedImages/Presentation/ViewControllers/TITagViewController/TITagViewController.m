@@ -18,8 +18,8 @@
 
 @implementation TITagViewController
 
-#warning опечатка в имени
-- (IBAction)sarchAction:(UIButton *)sender {
+//#warning опечатка в имени
+- (IBAction)searchAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TIContainerController *containerController = [storyboard instantiateViewControllerWithIdentifier:TIContainerControllerIdentifier];
     containerController.tag = self.tagField.text;

@@ -36,6 +36,7 @@
     [mapping addAttribute:attribute];
     
 #warning не совсем понял плясок вокруг параметра tag
+//    тут я присваиваю тот тег, по которому был поиск, каждому посту из этогй выборки, т к сохранено в кордате может быть много постов, но для показа ониотбираются по тегу
     FEMAttribute *tagAttribute =
     [[FEMAttribute alloc] initWithProperty:@"tag"
                                    keyPath:@"tags"
@@ -54,3 +55,4 @@
 }
 
 @end
+
