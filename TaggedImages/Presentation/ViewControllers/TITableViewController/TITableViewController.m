@@ -10,9 +10,7 @@
 #import "TITableViewCell.h"
 #import "TITaggedPostsTableViewDataSource.h"
 #import "TIPresentationConstants.h"
-#import "TIInstagramManager.h"
 #import "TIServicesConstants.h"
-
 
 @implementation TITableViewController
 
