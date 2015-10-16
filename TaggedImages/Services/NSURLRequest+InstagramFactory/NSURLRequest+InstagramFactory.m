@@ -26,6 +26,7 @@
         requestString = paginationInfo.nextUrl;
     }
     else {
+#warning получение токена лучше вынести либо в категорию к юзеру в статический метод, либо еще лучше в отдельный класс токен провайдер
         NSString *tokenString = [TIUser MR_findFirst].token;
         requestString =
         [NSString stringWithFormat:TIInstagramPostsRequestString, tag, tokenString, TITaggedPostsPageSize];

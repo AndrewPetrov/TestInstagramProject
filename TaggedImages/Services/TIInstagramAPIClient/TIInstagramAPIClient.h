@@ -12,6 +12,7 @@
 
 @interface TIInstagramAPIClient : NSObject
 
+#warning типы блоков объявите через typedef
 + (void)fetchInstagramRecentPostsRequestWithTag:(NSString *)tag
                                  paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
                                         success:(void(^)(NSDictionary* results))successBlock
