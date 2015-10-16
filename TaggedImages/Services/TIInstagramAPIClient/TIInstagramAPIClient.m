@@ -33,9 +33,5 @@
     [operation start];
 }
 
-+ (NSURLRequest *)instagramUserAuthorizationRequest {
-    return [NSURLRequest instagramUserAuthorizationRequest];
-}
-
 @end
 

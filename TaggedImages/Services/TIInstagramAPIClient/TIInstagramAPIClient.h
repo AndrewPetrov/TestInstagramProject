@@ -12,8 +12,6 @@
 
 @interface TIInstagramAPIClient : NSObject
 
-+ (NSURLRequest *)instagramUserAuthorizationRequest;
-
 + (void)fetchInstagramRecentPostsRequestWithTag:(NSString *)tag
                                  paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
                                         success:(void(^)(NSDictionary* results))successBlock

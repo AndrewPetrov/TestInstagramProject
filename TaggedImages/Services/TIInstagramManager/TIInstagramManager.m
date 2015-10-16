@@ -14,11 +14,12 @@
 #import "TIInstagramPostsPaginationInfo.h"
 #import "TIServicesConstants.h"
 #import "TIInstagramAPIClient.h"
+#import "NSURLRequest+InstagramFactory.h"
 
 @implementation TIInstagramManager
 
 + (NSURLRequest *)userAuthorizationRequest {
-    return [TIInstagramAPIClient instagramUserAuthorizationRequest];
+    return [NSURLRequest instagramUserAuthorizationRequest];
 }
 
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request {   
