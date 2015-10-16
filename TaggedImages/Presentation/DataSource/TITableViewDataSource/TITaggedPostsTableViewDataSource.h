@@ -12,6 +12,7 @@
 
 @interface TITaggedPostsTableViewDataSource : TITaggedPostsDataSource
 
-- (TITaggedPostsTableViewDataSource *)initWithTag:(NSString *)tag tableView:(UITableView *)tableView;
++ (TITaggedPostsTableViewDataSource *)taggedPostsTableViewDataSourceWithTag:(NSString *)tag
+                                                                  tableView:(UITableView *)tableView;
 
 @end

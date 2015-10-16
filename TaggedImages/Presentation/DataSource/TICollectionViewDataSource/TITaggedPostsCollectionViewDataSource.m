@@ -13,17 +13,19 @@
 
 @property (nonatomic, strong) NSMutableArray *sectionChanges;
 @property (nonatomic, strong) NSMutableArray *itemChanges;
-#warning collectionView здесь должна быть weak, так как ей "владеет" view у вьюконтроллера
-@property (nonatomic, strong) UICollectionView *collectionView;
+//#warning collectionView здесь должна быть weak, так как ей "владеет" view у вьюконтроллера
+@property (nonatomic, weak) UICollectionView *collectionView;
 
 @end
 
 @implementation TITaggedPostsCollectionViewDataSource
 
-- (TITaggedPostsCollectionViewDataSource *)initWithTag:(NSString *)tag collectionView:(UICollectionView *)collectionView {
-    self.tag = tag;
-    self.collectionView = collectionView;
-    return self;
++ (TITaggedPostsCollectionViewDataSource *)taggedPostsCollectionViewDataSourceWithTag:(NSString *)tag
+                                                                       collectionView:(UICollectionView *)collectionView {
+   TITaggedPostsCollectionViewDataSource *collectionViewDataSource = [[TITaggedPostsCollectionViewDataSource alloc] init];
+    collectionViewDataSource.tag = tag;
+    collectionViewDataSource.collectionView = collectionView;
+    return collectionViewDataSource;
 }
 
 #pragma mark - NSFetchedResultsControllerDelegate

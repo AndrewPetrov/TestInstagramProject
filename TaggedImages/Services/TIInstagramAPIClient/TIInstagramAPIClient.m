@@ -22,12 +22,10 @@
     operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Success");
         if (successBlock) {
             successBlock((NSDictionary *)responseObject);
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"failure");
         if (failureBlock) {
             failureBlock (error);
         }

@@ -31,14 +31,15 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
     self.tableVC = [storyboard instantiateViewControllerWithIdentifier:TITableViewControllerIdentifier];
-    self.tableVC.taggedPostsDataSource = [[TITaggedPostsTableViewDataSource alloc] initWithTag:self.tag
-                                                                                     tableView:self.tableVC.tableView];
+    self.tableVC.taggedPostsDataSource =
+    [TITaggedPostsTableViewDataSource taggedPostsTableViewDataSourceWithTag:self.tag
+                                                                  tableView:self.tableVC.tableView];
     
     self.collectionVC = [storyboard
                          instantiateViewControllerWithIdentifier:TICollectionViewControllerIdentifier];
     self.collectionVC.taggedPostsDataSource =
-    [[TITaggedPostsCollectionViewDataSource alloc] initWithTag:self.tag
-                                                collectionView:self.collectionVC.collectionView];
+    [TITaggedPostsCollectionViewDataSource taggedPostsCollectionViewDataSourceWithTag:self.tag
+                                                                       collectionView:self.collectionVC.collectionView];
     
     self.togglePresentationImage = [UIImage collectionImage];
     self.navigationItem.title = [NSString stringWithFormat:@"#%@",self.tag];
@@ -57,10 +58,10 @@
     newVC.view.frame = self.view.bounds;
     [oldVC willMoveToParentViewController:nil];
     [self addChildViewController:newVC];
-//#warning длительность анимации должна быть в константах
+    //#warning длительность анимации должна быть в константах
     [self transitionFromViewController:oldVC
                       toViewController:newVC
-                              duration:TITransitionDuration
+                              duration:TIChildControllersTransitionAnimationDuration
                                options:UIViewAnimationOptionTransitionFlipFromLeft
                             animations:nil
                             completion:^(BOOL finished) {

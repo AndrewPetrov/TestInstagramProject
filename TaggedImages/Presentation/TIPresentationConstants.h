@@ -17,6 +17,6 @@ static NSString * const TITagViewControllerIdentifier = @"TITagViewControllerIde
 static NSString * const TIContainerControllerIdentifier = @"TIContainerControllerIdentifier";
 
 static CGFloat const TINavigationBarHeight = 44.f;
-static CGFloat const TITransitionDuration = 0.5;
+static CGFloat const TIChildControllersTransitionAnimationDuration = 0.5;
 
 #endif /* TIPresentationConstants_h */

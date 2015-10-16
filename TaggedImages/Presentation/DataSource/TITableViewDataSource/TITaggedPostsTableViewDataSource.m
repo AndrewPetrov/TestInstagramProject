@@ -8,7 +8,6 @@
 
 #import "TITaggedPostsTableViewDataSource.h"
 #import "TITableViewCell.h"
-#import "TIInstagramPost.h"
 
 @interface TITaggedPostsTableViewDataSource ()
 
@@ -19,10 +18,12 @@
 
 @implementation TITaggedPostsTableViewDataSource
 
-- (TITaggedPostsTableViewDataSource *)initWithTag:(NSString *)tag tableView:(UITableView *)tableView {
-    self.tag = tag;
-    self.tableView = tableView;
-    return self;
++ (TITaggedPostsTableViewDataSource *)taggedPostsTableViewDataSourceWithTag:(NSString *)tag
+                                                                  tableView:(UITableView *)tableView {
+    TITaggedPostsTableViewDataSource *tableViewDataSource = [[TITaggedPostsTableViewDataSource alloc] init];
+    tableViewDataSource.tag = tag;
+    tableViewDataSource.tableView = tableView;
+    return tableViewDataSource;
 }
 
 - (void)configureCell:(TITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {

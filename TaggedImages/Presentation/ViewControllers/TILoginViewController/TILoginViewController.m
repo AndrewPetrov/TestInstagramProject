@@ -9,7 +9,6 @@
 #import "TILoginViewController.h"
 #import "TIInstagramManager.h"
 #import "TITagViewController.h"
-#import "TIContainerController.h"
 #import "TIPresentationConstants.h"
 #import "TIServicesConstants.h"
 
