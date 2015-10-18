@@ -14,8 +14,8 @@
 
 + (void)fetchInstagramRecentPostsRequestWithTag:(NSString *)tag
                                  paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
-                                        success:(void(^)(NSDictionary* results))successBlock
-                                        failure:(void(^)(NSError *error))failureBlock {
+                                        success:(dictionaryBlock)successBlock
+                                        failure:(errorBlock)failureBlock {
     NSURLRequest *request = [NSURLRequest instagramRecentPostsRequestWithTag:tag
                                                               paginationInfo:paginationInfo];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];

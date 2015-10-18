@@ -6,7 +6,7 @@
 //
 //
 
-#import "TIInstagramMapingManager.h"
+#import "TIInstagramMappingManager.h"
 #import <FastEasyMapping.h>
 #import "TIInstagramPost.h"
 #import "TIInstagramPost+Mapping.h"
@@ -14,7 +14,7 @@
 #import "TIInstagramPostsPaginationInfo+Mapping.h"
 #import <MagicalRecord.h>
 
-@implementation TIInstagramMapingManager
+@implementation TIInstagramMappingManager
 
 + (void)mapPostsFromJSONArray:(NSArray *)jsonArray withRequestedTag:(NSString *)requestedTag {
     FEMMapping *mapping = [TIInstagramPost defaultMappingWithRequestedTag:requestedTag];

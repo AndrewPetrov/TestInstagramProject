@@ -8,9 +8,8 @@
 
 #import "NSURLRequest+InstagramFactory.h"
 #import "TIInstagramPostsPaginationInfo.h"
-#import <MagicalRecord.h>
 #import "TIServicesConstants.h"
-#import "TIUser.h"
+#import "TITokenProvider.h"
 
 @implementation NSURLRequest (InstagramFactory)
 
@@ -26,10 +25,9 @@
         requestString = paginationInfo.nextUrl;
     }
     else {
-#warning получение токена лучше вынести либо в категорию к юзеру в статический метод, либо еще лучше в отдельный класс токен провайдер
-        NSString *tokenString = [TIUser MR_findFirst].token;
+//#warning получение токена лучше вынести либо в категорию к юзеру в статический метод, либо еще лучше в отдельный класс токен провайдер
         requestString =
-        [NSString stringWithFormat:TIInstagramPostsRequestString, tag, tokenString, TITaggedPostsPageSize];
+        [NSString stringWithFormat:TIInstagramPostsRequestString, tag, [TITokenProvider accessTokenString], TITaggedPostsPageSize];
     }
     return [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
 }

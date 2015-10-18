@@ -10,8 +10,8 @@
 
 @class TIInstagramPostsPaginationInfo;
 
-#warning mapping
-@interface TIInstagramMapingManager : NSObject
+//#warning mapping
+@interface TIInstagramMappingManager : NSObject
 
 + (void)mapPostsFromJSONArray:(NSArray *)jsonArray withRequestedTag:(NSString *)requestedTag;
 + (TIInstagramPostsPaginationInfo *)mapPaginationInfoFromJSONDictionary:(NSDictionary *)jsonDictionary;

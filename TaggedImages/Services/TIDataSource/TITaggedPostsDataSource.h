@@ -19,8 +19,7 @@
 
 - (NSInteger)postCount;
 - (TIInstagramPost *)postAtIndex:(NSInteger)index;
-#warning зачем нужен следующий метод?
-- (NSArray *)instagramPosts;
+//#warning зачем нужен следующий метод?
 - (void)requestRecentPost;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TIInstagramTypes.h"
 
 @class NSDictionary;
 @class NSError;
@@ -18,7 +19,7 @@
 + (void)saveTokenFromRedirectUriRequest:(NSURLRequest *)request;
 + (void)requestRecentPostWithTag:(NSString *)tag
                   paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
-                         success:(void(^)(TIInstagramPostsPaginationInfo *paginationInfo)) successBlock
-                         failure:(void(^)(NSError *error)) failureBlock;
+                         success:(paginationInfoBlock)successBlock
+                         failure:(errorBlock)failureBlock;
 
 @end

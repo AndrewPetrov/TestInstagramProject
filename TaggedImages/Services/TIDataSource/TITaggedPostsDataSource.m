@@ -11,6 +11,7 @@
 #import "NSFetchedResultsController+Factory.h"
 #import "TIInstagramManager.h"
 #import "TIInstagramPostsPaginationInfo.h"
+#import "TIInstagramTypes.h"
 
 @interface TITaggedPostsDataSource ()
 
@@ -22,15 +23,11 @@
 
 - (NSInteger)postCount {
     return [self.fetchedResultsController fetchedObjects].count;
-    
 }
+
 - (TIInstagramPost *)postAtIndex:(NSInteger)index {
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
     return [self.fetchedResultsController objectAtIndexPath:indexPath];
-}
-
-- (NSArray *)instagramPosts {
-    return [self.fetchedResultsController fetchedObjects];
 }
 
 - (NSFetchedResultsController *)fetchedResultsController {

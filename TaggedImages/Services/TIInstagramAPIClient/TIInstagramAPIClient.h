@@ -7,15 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TIInstagramTypes.h"
 
 @class TIInstagramPostsPaginationInfo;
 
 @interface TIInstagramAPIClient : NSObject
 
-#warning типы блоков объявите через typedef
+//#warning типы блоков объявите через typedef
 + (void)fetchInstagramRecentPostsRequestWithTag:(NSString *)tag
                                  paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo
-                                        success:(void(^)(NSDictionary* results))successBlock
-                                        failure:(void(^)(NSError *error))failureBlock;
+                                        success:(dictionaryBlock)successBlock
+                                        failure:(errorBlock)failureBlock;
 
 @end
