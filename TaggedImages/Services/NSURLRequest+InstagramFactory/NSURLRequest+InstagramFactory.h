@@ -13,7 +13,6 @@
 @interface NSURLRequest (InstagramFactory)
 
 + (NSURLRequest *)instagramUserAuthorizationRequest;
-
 + (NSURLRequest *)instagramRecentPostsRequestWithTag:(NSString *)tag
                                       paginationInfo:(TIInstagramPostsPaginationInfo *)paginationInfo;
 
